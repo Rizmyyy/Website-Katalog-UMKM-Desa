@@ -288,7 +288,7 @@ export default function AdminLogin() {
               <input
                 type="email"
                 className="form-input"
-                placeholder="contoh: admin@gumelarkidul.desa.id"
+                placeholder="Masukkan alamat email admin"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="email"
