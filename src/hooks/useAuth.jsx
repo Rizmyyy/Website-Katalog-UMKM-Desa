@@ -46,10 +46,15 @@ export function AuthProvider({ children }) {
     }
 
     if (isFirebaseConfigured && auth) {
-      const { signInWithEmailAndPassword } = await import('firebase/auth')
-      const result = await signInWithEmailAndPassword(auth, email, password)
-      setUser(result.user)
-      return result.user
+      try {
+        const { signInWithEmailAndPassword } = await import('firebase/auth')
+        const result = await signInWithEmailAndPassword(auth, email, password)
+        setUser(result.user)
+        return result.user
+      } catch (error) {
+        // Abaikan error konfigurasi firebase jika memang sengaja tidak diaktifkan, dan anggap saja salah sandi
+        throw new Error('Email atau kata sandi salah. Silakan coba lagi.')
+      }
     } else {
       throw new Error('Email atau kata sandi salah. Silakan coba lagi.')
     }
