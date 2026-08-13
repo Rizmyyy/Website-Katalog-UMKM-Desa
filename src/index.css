@@ -1762,14 +1762,19 @@ ul, ol {
   position: absolute;
   bottom: 16px;
   left: 16px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   gap: 6px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Trust Badge (Melayang di pojok) */
@@ -2331,13 +2336,14 @@ ul, ol {
   .showcase-badge {
     bottom: 12px; /* Lebih mepet di HP */
     left: 12px;
-    padding: 4px 10px;
-    font-size: 10px; /* Font lebih kecil di HP */
+    padding: 4px 12px;
+    font-size: 11px; 
     z-index: 2; /* Harus di atas gradien */
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    border-radius: 999px;
   }
 
   .hero-scroll-hint { display: none; }
