@@ -279,7 +279,7 @@ export default function Beranda() {
                 <div className="category-icon-wrapper" style={{ width: '80px', height: '80px', background: 'rgba(255,255,255, 0.15)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.2)', position: 'relative', zIndex: 1 }}>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                 </div>
-                <h3 className="category-title" style={{ fontSize: '20px', fontWeight: '800', color: '#ffffff', marginBottom: '8px', letterSpacing: '-0.02em', position: 'relative', zIndex: 1 }}>Kerajinan Kriya</h3>
+                <h3 className="category-title" style={{ fontSize: '20px', fontWeight: '800', color: '#ffffff', marginBottom: '8px', letterSpacing: '-0.02em', position: 'relative', zIndex: 1 }}>Kerajinan</h3>
                 <span className="category-subtitle" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', fontWeight: '600', position: 'relative', zIndex: 1 }}>{categoryStats.kerajinan} produk</span>
               </Link>
             </div>
