@@ -48,14 +48,12 @@ export function useDesa() {
               ...defaultDesaData.kontakDesa, 
               ...(parsed.kontakDesa || {})
             },
-            identitas: { ...(defaultDesaData.identitas || mockDesaInfo.identitas), ...(parsed.identitas || {}) },
+            identitas: { ...defaultDesaData.identitas, ...(parsed.identitas || {}) },
             beranda: { 
-              ...(defaultDesaData.beranda || mockDesaInfo.beranda), 
+              ...defaultDesaData.beranda, 
               ...(parsed.beranda || {}),
-              kades: {
-                ...(defaultDesaData.beranda?.kades || mockDesaInfo.beranda?.kades),
-                ...(parsed.beranda?.kades || {})
-              }
+              // Hanya gunakan default kades jika kades di firebase benar-benar tidak ada sama sekali
+              kades: parsed.beranda?.kades || defaultDesaData.beranda?.kades
             }
           })
         } else {

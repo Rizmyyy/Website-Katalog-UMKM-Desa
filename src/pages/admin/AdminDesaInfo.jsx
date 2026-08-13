@@ -150,7 +150,7 @@ export default function AdminDesaInfo() {
 
     setIsSaving(true)
     try {
-      let finalData = { ...formData };
+      let finalData = JSON.parse(JSON.stringify(formData));
       
       // Upload Logo ke ImgBB jika berupa Base64 baru
       if (finalData.identitas?.logo?.startsWith('data:image')) {
