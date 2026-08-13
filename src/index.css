@@ -14,7 +14,7 @@
   --color-surface-dim: #f5f5f5;
   --color-surface-alt: #F9FAFB;
   --color-surface-container: #F3F4F6;
-  --color-navbar-bg: rgba(255, 255, 255, 0.85);
+  --color-navbar-bg: #FFFFFF; /* Diubah dari rgba(255, 255, 255, 0.85) menjadi solid atas permintaan user */
 
   --color-primary: #096b68; /* Toska tua / Emerald sesuai gambar */
   --color-primary-dark: #054543;
@@ -98,7 +98,7 @@
   --color-surface-dim: #252525;
   --color-surface-alt: #2d2d2d;
   --color-surface-container: #1a1a1a;
-  --color-navbar-bg: rgba(30, 30, 30, 0.85);
+  --color-navbar-bg: #1e1e1e;
 
   --color-primary: #1cbab4; /* Terang untuk dark mode */
   --color-primary-dark: #128c88;
