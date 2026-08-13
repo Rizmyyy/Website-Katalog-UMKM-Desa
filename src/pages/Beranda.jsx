@@ -446,7 +446,7 @@ export default function Beranda() {
               <p style={{ fontSize: 'clamp(14px, 2.5vw, 17px)', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6', marginBottom: 'clamp(20px, 4vw, 36px)' }}>
                 Setiap produk yang Anda temukan di katalog ini adalah hasil karya nyata warga {desaInfo?.nama || 'Desa Gumelar Kidul'}. Kami merangkum seluruh potensi desa agar Anda bisa melihat langsung kualitas dari para pelaku UMKM kami.
               </p>
-              <Link to="/profil-desa" className="btn-hero-primary" style={{ padding: '14px 28px', background: 'linear-gradient(135deg, #f59e0b, #d97706)', boxShadow: '0 4px 20px rgba(217, 119, 6, 0.4)', color: '#fff', border: 'none' }}>
+              <Link to="/profil" className="btn-hero-primary" style={{ padding: '14px 28px', background: 'linear-gradient(135deg, #f59e0b, #d97706)', boxShadow: '0 4px 20px rgba(217, 119, 6, 0.4)', color: '#fff', border: 'none' }}>
                 Baca Profil Lengkap Desa &rarr;
               </Link>
             </ScrollReveal>
