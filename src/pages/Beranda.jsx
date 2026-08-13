@@ -254,7 +254,7 @@ export default function Beranda() {
 
             <div className="category-grid">
               {/* Kategori 1: Kuliner (Tema Utama/Hijau + Dotted Pattern & Watermark) */}
-              <Link to="/umkm?kategori=kuliner" style={{ background: 'radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px), linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', backgroundSize: '16px 16px, 100% 100%', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
+              <Link to="/umkm" state={{ category: 'Kuliner' }} style={{ background: 'radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px), linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', backgroundSize: '16px 16px, 100% 100%', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
                 {/* Cahaya di Pojok Atas */}
                 <div style={{ position: 'absolute', top: '-20px', left: '-20px', width: '120px', height: '120px', background: 'rgba(255,255,255,0.1)', borderRadius: '50%', filter: 'blur(24px)' }}></div>
                 
@@ -269,7 +269,7 @@ export default function Beranda() {
               </Link>
 
               {/* Kategori 2: Kerajinan (Tema Utama/Hijau + Dotted Pattern & Watermark) */}
-              <Link to="/umkm?kategori=kerajinan" style={{ background: 'radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px), linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', backgroundSize: '16px 16px, 100% 100%', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
+              <Link to="/umkm" state={{ category: 'Kerajinan' }} style={{ background: 'radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px), linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', backgroundSize: '16px 16px, 100% 100%', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
                 {/* Cahaya di Pojok Atas */}
                 <div style={{ position: 'absolute', top: '-20px', left: '-20px', width: '120px', height: '120px', background: 'rgba(255,255,255,0.1)', borderRadius: '50%', filter: 'blur(24px)' }}></div>
                 
