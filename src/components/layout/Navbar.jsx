@@ -36,17 +36,17 @@ export default function Navbar() {
     <>
       <nav className="navbar" id="navbar">
         <div className="container navbar-inner">
-          <Link to="/" className="navbar-brand" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+          <Link to="/" className="navbar-brand" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(8px, 2vw, 12px)', textDecoration: 'none', overflow: 'hidden' }}>
             {desaInfo?.identitas?.logo ? (
-              <img src={desaInfo.identitas.logo} alt="Logo Desa" style={{ width: 42, height: 42, objectFit: 'contain' }} />
+              <img src={desaInfo.identitas.logo} alt="Logo Desa" style={{ width: 'clamp(32px, 8vw, 42px)', height: 'clamp(32px, 8vw, 42px)', objectFit: 'contain', flexShrink: 0 }} />
             ) : (
-              <img src="/logo.png" alt="Logo Default" style={{ width: 42, height: 42, objectFit: 'contain' }} />
+              <img src="/logo.png" alt="Logo Default" style={{ width: 'clamp(32px, 8vw, 42px)', height: 'clamp(32px, 8vw, 42px)', objectFit: 'contain', flexShrink: 0 }} />
             )}
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <span style={{ fontWeight: 800, fontSize: '1.15rem', lineHeight: 1.1, color: 'var(--color-text)', letterSpacing: '0.02em', textTransform: 'uppercase' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}>
+              <span style={{ fontWeight: 800, fontSize: 'clamp(0.85rem, 4vw, 1.15rem)', lineHeight: 1.1, color: 'var(--color-text)', letterSpacing: '0.02em', textTransform: 'uppercase', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 {desaInfo?.identitas?.namaWeb || 'UMKM Gumelar Kidul'}
               </span>
-              <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: '4px' }}>
+              <span style={{ fontSize: 'clamp(0.55rem, 2.5vw, 0.7rem)', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: '4px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 KEC. TAMBAK &bull; KAB. BANYUMAS
               </span>
             </div>
