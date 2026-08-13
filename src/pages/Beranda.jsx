@@ -193,7 +193,6 @@ export default function Beranda() {
                   <Link key={umkm.id} to={`/umkm/${umkm.id}`} className="showcase-item">
                     <ImageWithSkeleton src={umkm.fotoUtama} alt={umkm.namaUmkm} className="showcase-img" />
                     <div className="showcase-badge" style={{ textTransform: 'capitalize' }}>
-                      {umkm.kategori === 'kuliner' ? '🥘 ' : umkm.kategori === 'kerajinan' ? '🎨 ' : '🌾 '}
                       {umkm.kategori || 'Produk'}
                     </div>
                   </Link>
