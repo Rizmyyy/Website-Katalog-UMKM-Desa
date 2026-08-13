@@ -76,15 +76,14 @@ export default function Beranda() {
 
   const featured = getFeatured()
   
-  // Memilih maksimal 3 Produk untuk Header (Prioritas: Unggulan, Fallback: Terbaru)
+  // Memilih 3 Produk acak untuk Header dari seluruh produk agar bervariasi setiap kali refresh
   const heroProducts = useMemo(() => {
-    if (featured.length > 0) {
-      const shuffled = [...featured].sort(() => 0.5 - Math.random())
+    if (umkmList.length > 0) {
+      const shuffled = [...umkmList].sort(() => 0.5 - Math.random())
       return shuffled.slice(0, 3)
     }
-    // Jika tidak ada produk unggulan sama sekali, ambil 3 produk terbaru
-    return umkmList.slice(0, 3)
-  }, [featured, umkmList])
+    return []
+  }, [umkmList])
 
   // Menghitung jumlah produk per kategori secara dinamis
   const categoryStats = useMemo(() => {
@@ -193,8 +192,10 @@ export default function Beranda() {
                 heroProducts.map((umkm, idx) => (
                   <Link key={umkm.id} to={`/umkm/${umkm.id}`} className="showcase-item">
                     <ImageWithSkeleton src={umkm.fotoUtama} alt={umkm.namaUmkm} className="showcase-img" />
-                    {idx === 0 && <div className="showcase-badge">✨ Terlaris</div>}
-                    {idx === 1 && <div className="showcase-badge">🥘 Pilihan Lokal</div>}
+                    <div className="showcase-badge" style={{ textTransform: 'capitalize' }}>
+                      {umkm.kategori === 'kuliner' ? '🥘 ' : umkm.kategori === 'kerajinan' ? '🎨 ' : '🌾 '}
+                      {umkm.kategori || 'Produk'}
+                    </div>
                   </Link>
                 ))
               ) : (
