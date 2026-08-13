@@ -36,13 +36,20 @@ export default function Navbar() {
     <>
       <nav className="navbar" id="navbar">
         <div className="container navbar-inner">
-          <Link to="/" className="navbar-brand">
+          <Link to="/" className="navbar-brand" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
             {desaInfo?.identitas?.logo ? (
-              <img src={desaInfo.identitas.logo} alt="Logo Desa" style={{ width: 36, height: 36, objectFit: 'contain' }} />
+              <img src={desaInfo.identitas.logo} alt="Logo Desa" style={{ width: 42, height: 42, objectFit: 'contain' }} />
             ) : (
-              <img src="/logo.png" alt="Logo Default" style={{ width: 36, height: 36, objectFit: 'contain' }} />
+              <img src="/logo.png" alt="Logo Default" style={{ width: 42, height: 42, objectFit: 'contain' }} />
             )}
-            <span>{desaInfo?.identitas?.namaWeb || 'UMKM Gumelar Kidul'}</span>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <span style={{ fontWeight: 800, fontSize: '1.15rem', lineHeight: 1.1, color: 'var(--color-text)', letterSpacing: '0.02em', textTransform: 'uppercase' }}>
+                {desaInfo?.identitas?.namaWeb || 'UMKM Gumelar Kidul'}
+              </span>
+              <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: '4px' }}>
+                KEC. TAMBAK &bull; KAB. BANYUMAS
+              </span>
+            </div>
           </Link>
 
           <div className="navbar-nav">
