@@ -137,28 +137,32 @@ export default function Beranda() {
               </p>
 
               {/* Tombol Aksi Kritis */}
-              <div style={{ display: 'flex', gap: '16px', marginTop: '32px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '12px', marginTop: '32px', width: '100%' }}>
                 <Link to="/umkm" className="btn btn-primary" style={{ 
-                  display: 'flex', alignItems: 'center', gap: '8px',
-                  padding: '14px 28px', fontSize: '16px', 
+                  flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+                  padding: '12px 16px', fontSize: 'clamp(12px, 3.5vw, 16px)', 
                   background: 'linear-gradient(135deg, #f59e0b, #d97706)', 
                   color: '#ffffff', 
                   border: 'none',
                   borderRadius: '12px',
                   boxShadow: '0 4px 20px rgba(217, 119, 6, 0.4)',
-                  fontWeight: 600
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  lineHeight: 1.2
                 }}>
-                  Jelajahi Semua Produk <span>→</span>
+                  Jelajahi Produk <span>→</span>
                 </Link>
                 <Link to="/profil" className="btn btn-outline" style={{ 
-                  display: 'flex', alignItems: 'center', gap: '8px',
-                  padding: '13px 27px', fontSize: '16px', 
+                  flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+                  padding: '12px 16px', fontSize: 'clamp(12px, 3.5vw, 16px)', 
                   color: 'rgba(255,255,255,0.9)', 
                   border: '1px solid rgba(255,255,255,0.4)',
                   borderRadius: '12px',
-                  fontWeight: 600
+                  fontWeight: 600,
+                  textAlign: 'center',
+                  lineHeight: 1.2
                 }}>
-                  <span style={{ fontSize: '12px' }}>▶</span> Kenali Desa Kami
+                  <span style={{ fontSize: '10px' }}>▶</span> Kenali Desa
                 </Link>
               </div>
 
