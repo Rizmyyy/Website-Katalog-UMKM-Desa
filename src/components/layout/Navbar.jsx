@@ -52,7 +52,8 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="navbar-nav">
+          <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', gap: 'clamp(16px, 3vw, 32px)' }}>
+            <div className="navbar-nav">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -79,6 +80,7 @@ export default function Navbar() {
                 <line x1="3" y1="18" x2="21" y2="18"/>
               </svg>
             </button>
+          </div>
           </div>
         </div>
       </nav>
