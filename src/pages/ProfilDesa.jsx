@@ -236,15 +236,9 @@ export default function ProfilDesa() {
                 overflow: 'hidden',
                 transition: 'all 0.3s ease'
               }}>
-                <p style={{ marginBottom: '16px' }}>
-                  Berawal dari sebuah pedukuhan kecil yang mengandalkan sektor pertanian tradisional, <strong>{desaInfo.nama}</strong> secara bertahap bertransformasi menjadi salah satu pusat ekonomi kreatif dan UMKM yang tangguh di wilayah ini.
-                </p>
-                <p style={{ paddingLeft: '16px', borderLeft: '4px solid var(--color-primary-light)', marginBottom: '16px' }}>
-                  {desaInfo.sejarah || 'Masyarakat kami memiliki keahlian turun-temurun dalam mengolah sumber daya alam sekitar, menciptakan produk inovatif yang bernilai tinggi dan berdaya saing di pasar.'}
-                </p>
-                <p>
-                  Kini, desa kami dikenal luas karena komitmen kuat seluruh warga dalam membina UMKM lokal, melestarikan kearifan budaya leluhur, sekaligus beradaptasi dengan perkembangan teknologi.
-                </p>
+                <div style={{ whiteSpace: 'pre-line', lineHeight: '1.8' }}>
+                  {desaInfo.sejarah || 'Belum ada data sejarah yang ditambahkan.'}
+                </div>
               </div>
               <button 
                 onClick={() => setExpandedSejarah(!expandedSejarah)}
