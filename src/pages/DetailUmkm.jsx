@@ -60,16 +60,15 @@ export default function DetailUmkm() {
   useEffect(() => {
     let interval;
     if (umkm && umkm.fotoProses && umkm.fotoProses.length > 1) {
-      let direction = 1;
       interval = setInterval(() => {
         if (prosesGalleryRef.current) {
           const { scrollLeft, scrollWidth, clientWidth } = prosesGalleryRef.current;
-          if (scrollLeft + clientWidth >= scrollWidth - 5) {
-            direction = -1;
-          } else if (scrollLeft <= 5) {
-            direction = 1;
+          // Jika sudah mencapai paling kanan, lompat kembali ke awal untuk efek unlimited
+          if (scrollLeft + clientWidth >= scrollWidth - 10) {
+            prosesGalleryRef.current.scrollTo({ left: 0, behavior: 'auto' });
+          } else {
+            prosesGalleryRef.current.scrollBy({ left: 280, behavior: 'smooth' });
           }
-          prosesGalleryRef.current.scrollBy({ left: 280 * direction, behavior: 'smooth' });
         }
       }, 3500); // Geser setiap 3.5 detik
     }
@@ -742,10 +741,13 @@ export default function DetailUmkm() {
                           0%, 100% { transform: translateY(-50%) translateX(0); }
                           50% { transform: translateY(-50%) translateX(6px); }
                         }
-                        .scroll-indicator-right {
+                        @keyframes bounceLeft {
+                          0%, 100% { transform: translateY(-50%) translateX(0); }
+                          50% { transform: translateY(-50%) translateX(-6px); }
+                        }
+                        .scroll-indicator-right, .scroll-indicator-left {
                           position: absolute;
                           top: 50%;
-                          right: -16px;
                           transform: translateY(-50%);
                           width: 48px;
                           height: 48px;
@@ -758,24 +760,25 @@ export default function DetailUmkm() {
                           color: var(--color-primary);
                           cursor: pointer;
                           z-index: 10;
-                          animation: bounceRight 2s infinite;
                           border: 1px solid rgba(0,0,0,0.05);
                           transition: all 0.3s ease;
                         }
-                        .scroll-indicator-right:hover {
+                        .scroll-indicator-right {
+                          right: -16px;
+                          animation: bounceRight 2s infinite;
+                        }
+                        .scroll-indicator-left {
+                          left: -16px;
+                          animation: bounceLeft 2s infinite;
+                        }
+                        .scroll-indicator-right:hover, .scroll-indicator-left:hover {
                           background: var(--color-primary);
                           color: white;
                         }
                         @media (max-width: 768px) {
-                          .scroll-indicator-right {
-                            right: 4px;
-                            width: 36px;
-                            height: 36px;
-                          }
-                          .scroll-indicator-right svg {
-                            width: 20px;
-                            height: 20px;
-                          }
+                          .scroll-indicator-right { right: 4px; width: 36px; height: 36px; }
+                          .scroll-indicator-left { left: 4px; width: 36px; height: 36px; }
+                          .scroll-indicator-right svg, .scroll-indicator-left svg { width: 20px; height: 20px; }
                         }
                         .horizontal-scroll-container {
                           display: flex;
@@ -812,8 +815,17 @@ export default function DetailUmkm() {
                         }
                       `}</style>
                       <div style={{ position: 'relative' }}>
+                        {umkm.fotoProses.length > 1 && (
+                          <div 
+                            className="scroll-indicator-left" 
+                            onClick={() => prosesGalleryRef.current?.scrollBy({ left: -280, behavior: 'smooth' })}
+                            title="Geser ke kiri"
+                          >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                          </div>
+                        )}
                         <div className="horizontal-scroll-container" ref={prosesGalleryRef}>
-                          {umkm.fotoProses.map((foto, idx) => (
+                          {[...umkm.fotoProses, ...umkm.fotoProses, ...umkm.fotoProses, ...umkm.fotoProses, ...umkm.fotoProses].map((foto, idx) => (
                             <div key={idx} className="horizontal-scroll-item" onClick={() => setLightboxImage(foto)} style={{ cursor: 'zoom-in' }}>
                               <img 
                                 src={foto} 
@@ -826,7 +838,7 @@ export default function DetailUmkm() {
                           <div 
                             className="scroll-indicator-right" 
                             onClick={() => prosesGalleryRef.current?.scrollBy({ left: 280, behavior: 'smooth' })}
-                            title="Geser untuk melihat foto lain"
+                            title="Geser ke kanan"
                           >
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                           </div>
