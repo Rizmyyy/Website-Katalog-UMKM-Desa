@@ -28,6 +28,7 @@ export default function DetailUmkm() {
   const storyRef = useRef(null)
   const alasanRef = useRef(null)
   const keunikanRef = useRef(null)
+  const prosesGalleryRef = useRef(null)
 
   const [showStoryToggle, setShowStoryToggle] = useState(false)
   const [showAlasanToggle, setShowAlasanToggle] = useState(false)
@@ -54,6 +55,26 @@ export default function DetailUmkm() {
       setActiveImage(umkm.fotoUtama)
     }
   }, [id, umkm])
+
+  // Auto-scroll untuk galeri foto proses
+  useEffect(() => {
+    let interval;
+    if (umkm && umkm.fotoProses && umkm.fotoProses.length > 1) {
+      let direction = 1;
+      interval = setInterval(() => {
+        if (prosesGalleryRef.current) {
+          const { scrollLeft, scrollWidth, clientWidth } = prosesGalleryRef.current;
+          if (scrollLeft + clientWidth >= scrollWidth - 5) {
+            direction = -1;
+          } else if (scrollLeft <= 5) {
+            direction = 1;
+          }
+          prosesGalleryRef.current.scrollBy({ left: 280 * direction, behavior: 'smooth' });
+        }
+      }, 3500); // Geser setiap 3.5 detik
+    }
+    return () => { if (interval) clearInterval(interval); }
+  }, [umkm]);
 
   // Gallery Navigation Logic
   // Menghapus duplikasi URL gambar agar navigasi panah tidak tersangkut/lompat
@@ -715,20 +736,46 @@ export default function DetailUmkm() {
                         <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', lineHeight: 1.5 }}>
                           Intip proses pembuatan produk ini langsung dari dapur produksi {umkm.namaUmkm}.
                         </p>
-                        {umkm.fotoProses.length > 1 && (
-                          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 700, color: 'var(--color-primary-dark)', backgroundColor: 'rgba(74, 222, 128, 0.15)', padding: '4px 12px', borderRadius: '100px', border: '1px solid rgba(74, 222, 128, 0.3)' }}>
-                            Geser ke kanan untuk melihat semua ({umkm.fotoProses.length} foto) 
-                            <svg className="swipe-hint-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                          </div>
-                        )}
                       </div>
                       <style>{`
-                        @keyframes swipeHintAnim {
-                          0%, 100% { transform: translateX(0); }
-                          50% { transform: translateX(4px); }
+                        @keyframes bounceRight {
+                          0%, 100% { transform: translateY(-50%) translateX(0); }
+                          50% { transform: translateY(-50%) translateX(6px); }
                         }
-                        .swipe-hint-icon {
-                          animation: swipeHintAnim 1.5s ease-in-out infinite;
+                        .scroll-indicator-right {
+                          position: absolute;
+                          top: 50%;
+                          right: -16px;
+                          transform: translateY(-50%);
+                          width: 48px;
+                          height: 48px;
+                          background: white;
+                          border-radius: 50%;
+                          box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          color: var(--color-primary);
+                          cursor: pointer;
+                          z-index: 10;
+                          animation: bounceRight 2s infinite;
+                          border: 1px solid rgba(0,0,0,0.05);
+                          transition: all 0.3s ease;
+                        }
+                        .scroll-indicator-right:hover {
+                          background: var(--color-primary);
+                          color: white;
+                        }
+                        @media (max-width: 768px) {
+                          .scroll-indicator-right {
+                            right: 4px;
+                            width: 36px;
+                            height: 36px;
+                          }
+                          .scroll-indicator-right svg {
+                            width: 20px;
+                            height: 20px;
+                          }
                         }
                         .horizontal-scroll-container {
                           display: flex;
@@ -737,7 +784,6 @@ export default function DetailUmkm() {
                           padding-bottom: 12px;
                           scroll-snap-type: x mandatory;
                           -webkit-overflow-scrolling: touch;
-                          /* Menyembunyikan scrollbar bawaan agar rapi */
                           scrollbar-width: none;
                           -ms-overflow-style: none;
                         }
@@ -765,15 +811,26 @@ export default function DetailUmkm() {
                           transform: scale(1.03);
                         }
                       `}</style>
-                      <div className="horizontal-scroll-container">
-                        {umkm.fotoProses.map((foto, idx) => (
-                          <div key={idx} className="horizontal-scroll-item" onClick={() => setLightboxImage(foto)} style={{ cursor: 'zoom-in' }}>
-                            <img 
-                              src={foto} 
-                              alt={`Proses pembuatan ${umkm.namaUmkm} ${idx + 1}`} 
-                            />
+                      <div style={{ position: 'relative' }}>
+                        <div className="horizontal-scroll-container" ref={prosesGalleryRef}>
+                          {umkm.fotoProses.map((foto, idx) => (
+                            <div key={idx} className="horizontal-scroll-item" onClick={() => setLightboxImage(foto)} style={{ cursor: 'zoom-in' }}>
+                              <img 
+                                src={foto} 
+                                alt={`Proses pembuatan ${umkm.namaUmkm} ${idx + 1}`} 
+                              />
+                            </div>
+                          ))}
+                        </div>
+                        {umkm.fotoProses.length > 1 && (
+                          <div 
+                            className="scroll-indicator-right" 
+                            onClick={() => prosesGalleryRef.current?.scrollBy({ left: 280, behavior: 'smooth' })}
+                            title="Geser untuk melihat foto lain"
+                          >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                           </div>
-                        ))}
+                        )}
                       </div>
                     </div>
                   )}
