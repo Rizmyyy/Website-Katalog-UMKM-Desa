@@ -711,10 +711,25 @@ export default function DetailUmkm() {
                         <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'var(--color-primary)' }}></div>
                         <h2 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--color-text)', margin: 0 }}>Di Balik Layar</h2>
                       </div>
-                      <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '20px', lineHeight: 1.5 }}>
-                        Intip proses pembuatan produk ini langsung dari dapur produksi {umkm.namaUmkm}.
-                      </p>
+                      <div style={{ marginBottom: '20px' }}>
+                        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', lineHeight: 1.5 }}>
+                          Intip proses pembuatan produk ini langsung dari dapur produksi {umkm.namaUmkm}.
+                        </p>
+                        {umkm.fotoProses.length > 1 && (
+                          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 700, color: 'var(--color-primary-dark)', backgroundColor: 'rgba(74, 222, 128, 0.15)', padding: '4px 12px', borderRadius: '100px', border: '1px solid rgba(74, 222, 128, 0.3)' }}>
+                            Geser ke kanan untuk melihat semua ({umkm.fotoProses.length} foto) 
+                            <svg className="swipe-hint-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                          </div>
+                        )}
+                      </div>
                       <style>{`
+                        @keyframes swipeHintAnim {
+                          0%, 100% { transform: translateX(0); }
+                          50% { transform: translateX(4px); }
+                        }
+                        .swipe-hint-icon {
+                          animation: swipeHintAnim 1.5s ease-in-out infinite;
+                        }
                         .horizontal-scroll-container {
                           display: flex;
                           overflow-x: auto;
