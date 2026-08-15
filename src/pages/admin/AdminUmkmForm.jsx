@@ -11,7 +11,6 @@ const emptyForm = {
   kategori: 'kuliner',
   deskripsiSingkat: '',
   storytelling: '',
-  alasanUsaha: '',
   produkUnggulan: '',
   keunikanProduk: '',
   daftarHarga: [{ namaProduk: '', harga: '' }],
@@ -57,7 +56,6 @@ export default function AdminUmkmForm() {
           kategori: data.kategori || 'kuliner',
           deskripsiSingkat: data.deskripsiSingkat || '',
           storytelling: data.storytelling || '',
-          alasanUsaha: data.alasanUsaha || '',
           produkUnggulan: data.produkUnggulan || '',
           keunikanProduk: data.keunikanProduk || '',
           daftarHarga: data.daftarHarga && data.daftarHarga.length > 0
@@ -317,13 +315,14 @@ export default function AdminUmkmForm() {
           </div>
 
           <div className="form-group">
-            <label className="form-label" htmlFor="alasanUsaha">Alasan Membuka Usaha</label>
+            <label className="form-label" htmlFor="keunikanProduk">Keunikan Produk / Mengapa Harus Coba</label>
+            <p className="form-hint">Apa yang membuat produk ini spesial? (bahan lokal, teknik khusus, dll)</p>
             <textarea
-              id="alasanUsaha"
+              id="keunikanProduk"
               className="form-textarea"
-              placeholder="Apa yang memotivasi membuka usaha ini?"
-              value={form.alasanUsaha}
-              onChange={(e) => handleChange('alasanUsaha', e.target.value)}
+              placeholder="Contoh: Menggunakan pewarna alami 100% dari dedaunan dan kulit kayu lokal..."
+              value={form.keunikanProduk}
+              onChange={(e) => handleChange('keunikanProduk', e.target.value)}
               rows={3}
             />
           </div>
@@ -346,19 +345,6 @@ export default function AdminUmkmForm() {
               placeholder="Contoh: Batik Tulis Motif Pegunungan"
               value={form.produkUnggulan}
               onChange={(e) => handleChange('produkUnggulan', e.target.value)}
-            />
-          </div>
-
-          <div className="form-group">
-            <label className="form-label" htmlFor="keunikanProduk">Keunikan Produk</label>
-            <p className="form-hint">Apa yang membuat produk ini spesial? (bahan lokal, teknik khusus, dll)</p>
-            <textarea
-              id="keunikanProduk"
-              className="form-textarea"
-              placeholder="Contoh: Menggunakan pewarna alami 100% dari dedaunan dan kulit kayu lokal..."
-              value={form.keunikanProduk}
-              onChange={(e) => handleChange('keunikanProduk', e.target.value)}
-              rows={3}
             />
           </div>
 

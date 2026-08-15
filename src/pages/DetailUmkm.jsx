@@ -22,16 +22,13 @@ export default function DetailUmkm() {
   const [activeImage, setActiveImage] = useState(null)
   const [lightboxImage, setLightboxImage] = useState(null)
   const [isStoryExpanded, setIsStoryExpanded] = useState(false)
-  const [isAlasanExpanded, setIsAlasanExpanded] = useState(false)
   const [isKeunikanExpanded, setIsKeunikanExpanded] = useState(false)
   
   const storyRef = useRef(null)
-  const alasanRef = useRef(null)
   const keunikanRef = useRef(null)
   const prosesGalleryRef = useRef(null)
 
   const [showStoryToggle, setShowStoryToggle] = useState(false)
-  const [showAlasanToggle, setShowAlasanToggle] = useState(false)
   const [showKeunikanToggle, setShowKeunikanToggle] = useState(false)
 
   useEffect(() => {
@@ -39,7 +36,6 @@ export default function DetailUmkm() {
       // Tunggu DOM selesai render untuk mengukur tinggi dengan akurat
       setTimeout(() => {
         if (storyRef.current) setShowStoryToggle(storyRef.current.scrollHeight > storyRef.current.clientHeight)
-        if (alasanRef.current) setShowAlasanToggle(alasanRef.current.scrollHeight > alasanRef.current.clientHeight)
         if (keunikanRef.current) setShowKeunikanToggle(keunikanRef.current.scrollHeight > keunikanRef.current.clientHeight)
       }, 100)
     }
@@ -458,11 +454,11 @@ export default function DetailUmkm() {
           {/* KONTEN TAMBAHAN FULL WIDTH (Di Bawah Grid Utama) */}
           <div style={{ marginTop: 'clamp(16px, 4vw, 64px)' }}>
               {/* Editorial Asymmetric Grid */}
-              {(umkm.alasanUsaha || umkm.keunikanProduk) && (
+              {(umkm.storytelling || umkm.keunikanProduk) && (
                 <ScrollReveal>
                   <div className="editorial-grid">
-                    {/* Block 01: Alasan Usaha (Soft Tint) */}
-                    {umkm.alasanUsaha && (
+                    {/* Block 01: Kisah Dibalik Usaha (Soft Tint) */}
+                    {umkm.storytelling && (
                       <div style={{
                         position: 'relative', overflow: 'hidden',
                         padding: 'clamp(16px, 4vw, 36px) clamp(16px, 4vw, 32px)', backgroundColor: '#f0fdf4', // Soft emerald tint
@@ -470,18 +466,18 @@ export default function DetailUmkm() {
                         boxShadow: '0 10px 30px rgba(16, 185, 129, 0.05)'
                       }}>
                         <div style={{ position: 'absolute', right: -10, bottom: -24, fontSize: 'clamp(60px, 15vw, 140px)', fontWeight: 900, color: 'rgba(16, 185, 129, 0.15)', lineHeight: 1, userSelect: 'none', letterSpacing: '-0.05em' }}>01</div>
-                        <h3 style={{ fontSize: 'clamp(11px, 2.5vw, 13px)', fontWeight: 800, color: 'var(--color-primary-dark)', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 'clamp(8px, 2vw, 16px)' }}>Kisah & Dedikasi</h3>
+                        <h3 style={{ fontSize: 'clamp(11px, 2.5vw, 13px)', fontWeight: 800, color: 'var(--color-primary-dark)', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 'clamp(8px, 2vw, 16px)' }}>Kisah Dibalik Usaha</h3>
                         
-                        <div ref={alasanRef} className="story-text-container" style={{ 
-                          maxHeight: isAlasanExpanded ? '1000px' : '80px', 
+                        <div ref={storyRef} className="story-text-container" style={{ 
+                          maxHeight: isStoryExpanded ? '1000px' : '80px', 
                           overflow: 'hidden',
                           transition: 'max-height 0.4s ease-in-out',
                           position: 'relative', zIndex: 1
                         }}>
-                          <p style={{ fontSize: 'clamp(13px, 3.5vw, 16px)', color: 'var(--color-text)', lineHeight: 1.6, fontWeight: 500, margin: 0 }}>{umkm.alasanUsaha}</p>
+                          <p style={{ fontSize: 'clamp(13px, 3.5vw, 16px)', color: 'var(--color-text)', lineHeight: 1.6, fontWeight: 500, margin: 0, whiteSpace: 'pre-wrap' }}>{umkm.storytelling}</p>
                         </div>
 
-                        {showAlasanToggle && !isAlasanExpanded && (
+                        {showStoryToggle && !isStoryExpanded && (
                           <div className="story-gradient-mask" style={{
                             position: 'absolute',
                             bottom: '36px', left: 0, right: 0, height: '40px',
@@ -490,10 +486,10 @@ export default function DetailUmkm() {
                           }} />
                         )}
 
-                        {showAlasanToggle && (
+                        {showStoryToggle && (
                           <button 
                             className="story-toggle-btn"
-                            onClick={() => setIsAlasanExpanded(!isAlasanExpanded)}
+                            onClick={() => setIsStoryExpanded(!isStoryExpanded)}
                             style={{
                               marginTop: '12px', background: 'none', border: 'none',
                               color: 'var(--color-primary-dark)', fontWeight: 700, fontSize: '13px',
@@ -501,8 +497,8 @@ export default function DetailUmkm() {
                               position: 'relative', zIndex: 3
                             }}
                           >
-                            {isAlasanExpanded ? 'Sembunyikan' : 'Baca Selengkapnya'}
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: isAlasanExpanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease' }}>
+                            {isStoryExpanded ? 'Sembunyikan' : 'Baca Selengkapnya'}
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: isStoryExpanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease' }}>
                               <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                           </button>
@@ -562,79 +558,7 @@ export default function DetailUmkm() {
                 </ScrollReveal>
               )}
 
-              {/* Storytelling dengan Smart Fallback */}
-              <ScrollReveal>
-                <div style={{ marginBottom: '40px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                    <h2 style={{ fontSize: '20px', fontWeight: 800, color: 'var(--color-text)', margin: 0 }}>Kisah di Balik Usaha</h2>
-                  </div>
-                  <div style={{
-                    padding: 'clamp(20px, 5vw, 32px)',
-                    backgroundColor: 'var(--color-surface)',
-                    backgroundImage: 'radial-gradient(circle at top right, rgba(74, 222, 128, 0.1), transparent 300px)',
-                    borderRadius: '24px',
-                    border: '1px solid var(--color-border)',
-                    lineHeight: 1.6,
-                    fontSize: 'clamp(14px, 3.5vw, 16px)',
-                    color: 'var(--color-text-secondary)',
-                    position: 'relative'
-                  }}>
-                    <div ref={storyRef} className="story-text-container" style={{ 
-                      maxHeight: isStoryExpanded ? '2000px' : '100px', 
-                      overflow: 'hidden',
-                      transition: 'max-height 0.5s ease-in-out'
-                    }}>
-                      {umkm.storytelling ? (
-                        umkm.storytelling
-                      ) : (
-                        <span style={{ fontStyle: 'italic' }}>
-                          Merupakan salah satu penggerak roda ekonomi lokal di Desa Gumelar Kidul. Usaha ini didirikan dengan dedikasi tinggi untuk menghadirkan produk berkualitas bagi masyarakat sekitar, sekaligus turut serta dalam membangun semangat wirausaha di lingkungan desa. Kami berkomitmen untuk terus menjaga kualitas dan kepercayaan pelanggan.
-                        </span>
-                      )}
-                    </div>
-                    
-                    {/* Gradasi Penutup Teks (Hanya muncul jika tertutup dan butuh toggle) */}
-                    {showStoryToggle && !isStoryExpanded && (
-                      <div className="story-gradient-mask" style={{
-                        position: 'absolute',
-                        bottom: '40px', /* di atas tombol */
-                        left: 0, right: 0,
-                        height: '60px',
-                        background: 'linear-gradient(to bottom, transparent, var(--color-surface))',
-                        pointerEvents: 'none'
-                      }} />
-                    )}
 
-                    {/* Tombol Baca Selengkapnya */}
-                    {showStoryToggle && (
-                      <button 
-                        className="story-toggle-btn"
-                        onClick={() => setIsStoryExpanded(!isStoryExpanded)}
-                        style={{
-                          marginTop: '16px',
-                          background: 'none',
-                          border: 'none',
-                          color: 'var(--color-primary)',
-                          fontWeight: 700,
-                          fontSize: '14px',
-                          cursor: 'pointer',
-                          padding: '4px 0',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '6px',
-                          position: 'relative',
-                          zIndex: 2
-                        }}
-                      >
-                        {isStoryExpanded ? 'Sembunyikan' : 'Baca Selengkapnya'}
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: isStoryExpanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease' }}>
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </ScrollReveal>
 
               {/* Produk Lain dari Pemilik (Dalam Kolom) */}
       {produkPemilik && produkPemilik.length > 0 && (

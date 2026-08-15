@@ -11,7 +11,6 @@ export const mockUmkmData = [
     kategori: 'kerajinan',
     deskripsiSingkat: 'Batik tulis khas Gumelar dengan motif flora dan fauna pegunungan yang menggambarkan keindahan alam desa.',
     storytelling: 'Bu Siti memulai usaha batik ini sejak tahun 2005, meneruskan warisan ibunya yang sudah membatik sejak beliau masih kecil. Setiap helai kain yang dihasilkan menyimpan cerita tentang kehidupan desa — mulai dari motif daun teh yang melambangkan mata pencaharian utama warga, hingga motif burung kutilang yang setiap pagi bernyanyi di pekarangan rumah.\n\nProses membatik dilakukan sepenuhnya secara tradisional: dari mencanting lilin malam hingga pewarnaan alami menggunakan dedaunan dan kulit kayu dari hutan sekitar desa. Butuh waktu 2-3 minggu untuk menyelesaikan satu kain batik tulis berkualitas tinggi.\n\n"Saya ingin anak cucu tetap mengenal batik sebagai warisan budaya, bukan sekadar kain bermotif," ujar Bu Siti dengan penuh semangat.',
-    alasanUsaha: 'Meneruskan warisan budaya membatik dari orang tua dan memberikan lapangan pekerjaan bagi ibu-ibu di sekitar rumah.',
     produkUnggulan: 'Batik Tulis Motif Pegunungan',
     keunikanProduk: 'Menggunakan pewarna alami 100% dari dedaunan dan kulit kayu lokal. Setiap kain memiliki motif unik yang tidak akan persis sama karena dibuat satu per satu secara handmade.',
     daftarHarga: [
@@ -47,7 +46,6 @@ export const mockUmkmData = [
     kategori: 'kuliner',
     deskripsiSingkat: 'Keripik tempe renyah dengan bumbu rempah khas yang sudah turun-temurun menjadi oleh-oleh favorit pengunjung desa.',
     storytelling: 'Usaha keripik tempe ini bermula dari kebiasaan Bu Darmi membuat camilan untuk keluarga. Tetangga dan tamu yang mencicipi selalu memuji rasanya yang gurih dan renyah berbeda dari keripik tempe pada umumnya. Suaminya, Pak Joko, menyarankan agar dijual ke pasar.\n\nRahasia kelezatan keripik tempe Bu Darmi ada pada racikan bumbu rempah yang diwariskan neneknya. Campuran ketumbar, bawang putih, dan daun jeruk segar yang ditumbuk halus memberikan aroma dan rasa yang khas. Tempe yang digunakan pun dibuat sendiri dari kedelai lokal pilihan.\n\n"Awalnya saya malu jualan, tapi ternyata banyak yang suka. Sekarang sudah bisa bantu biaya sekolah anak-anak," cerita Bu Darmi sambil tersenyum bangga.',
-    alasanUsaha: 'Membantu perekonomian keluarga dan memanfaatkan resep warisan nenek yang sayang kalau tidak diteruskan.',
     produkUnggulan: 'Keripik Tempe Original',
     keunikanProduk: 'Bumbu rempah racikan tradisional turun-temurun, tempe dibuat sendiri dari kedelai lokal, digoreng dengan minyak kelapa asli sehingga lebih gurih dan tahan lama.',
     daftarHarga: [
@@ -82,7 +80,6 @@ export const mockUmkmData = [
     kategori: 'kuliner',
     deskripsiSingkat: 'Bolen lilit renyah dengan isian pisang raja manis dan keju melimpah, cocok untuk teman ngeteh.',
     storytelling: 'Selain mahir membuat keripik tempe, Bu Darmi dulunya pernah bekerja di pabrik roti. Keterampilan inilah yang ia gunakan untuk membuat Bolen Lilit yang unik dan berlapis-lapis.\n\n"Pisang raja asli dari kebun belakang rumah. Karena bolen ini sangat diminati saat Lebaran, akhirnya saya putuskan untuk memproduksinya setiap hari," ujar Bu Darmi.',
-    alasanUsaha: 'Memanfaatkan pisang raja dari kebun sendiri dan menambah variasi produk jualan.',
     produkUnggulan: 'Bolen Lilit Pisang Keju',
     keunikanProduk: 'Kulit bolen sangat renyah dan berlapis-lapis (lilit), isian pisang raja utuh tanpa campuran.',
     daftarHarga: [
@@ -108,7 +105,6 @@ export const mockUmkmData = [
     kategori: 'pertanian',
     deskripsiSingkat: 'Gula kelapa murni organik yang diolah secara tradisional dari nira pohon kelapa pilihan di kebun sendiri.',
     storytelling: 'Pak Wahid sudah menjadi penderes (pengambil nira kelapa) sejak usia 17 tahun, melanjutkan pekerjaan ayah dan kakeknya. Setiap subuh pukul 4 pagi, beliau memanjat pohon kelapa setinggi 15-20 meter untuk mengambil nira segar yang kemudian diolah menjadi gula kelapa.\n\nProses pembuatan gula kelapa dilakukan di dapur sederhana di belakang rumah. Nira segar dimasak dalam wajan besar selama 4-5 jam dengan api kayu bakar hingga mengental dan siap dicetak. Tidak ada bahan pengawet atau pewarna buatan — murni 100% alami.\n\n"Gula kelapa itu seperti emas cokelat bagi kami para penderes. Dari satu pohon kelapa, kami bisa menghidupi keluarga," kata Pak Wahid dengan tatapan penuh rasa syukur.',
-    alasanUsaha: 'Melanjutkan tradisi keluarga sebagai penderes dan mengolah nira menjadi gula kelapa berkualitas tinggi.',
     produkUnggulan: 'Gula Kelapa Cetak Organik',
     keunikanProduk: '100% organik tanpa bahan tambahan, diolah secara tradisional dengan kayu bakar, nira diambil langsung dari kebun sendiri sehingga terjamin kesegarannya.',
     daftarHarga: [
@@ -139,7 +135,6 @@ export const mockUmkmData = [
     kategori: 'kerajinan',
     deskripsiSingkat: 'Kerajinan anyaman bambu fungsional dan dekoratif yang memadukan teknik anyam tradisional dengan desain modern.',
     storytelling: 'Pak Tarno belajar menganyam bambu dari mendiang ayahnya sejak umur 10 tahun. Dulu, anyaman bambu hanya berupa peralatan dapur seperti tampah dan besek. Namun seiring waktu, Pak Tarno mulai bereksperimen membuat produk yang lebih modern: tas bambu, lampu hias, hingga furnitur kecil.\n\nBambu yang digunakan dipilih langsung dari rumpun bambu di pinggir sungai desa. Bambu dipotong saat usia tepat — tidak terlalu muda (supaya kuat) dan tidak terlalu tua (supaya lentur). Setelah direndam dan dijemur, bambu diirat tipis-tipis dengan pisau khusus sebelum dianyam.\n\n"Anyaman bambu itu seni yang butuh kesabaran. Satu keranjang bisa butuh 3 hari kerja, tapi hasilnya tahan bertahun-tahun," jelas Pak Tarno sambil menunjukkan koleksi karyanya.',
-    alasanUsaha: 'Melestarikan seni anyaman bambu tradisional dan menciptakan produk ramah lingkungan sebagai alternatif plastik.',
     produkUnggulan: 'Tas Anyaman Bambu Modern',
     keunikanProduk: 'Kombinasi teknik anyam tradisional dengan desain kontemporer, bambu dipilih langsung dari alam sekitar desa, setiap produk handmade unik.',
     daftarHarga: [
@@ -171,7 +166,6 @@ export const mockUmkmData = [
     kategori: 'kuliner',
     deskripsiSingkat: 'Kopi robusta single origin dari lereng Gumelar yang diolah secara natural process untuk menghasilkan cita rasa khas.',
     storytelling: 'Mas Adi adalah pemuda desa yang memutuskan pulang kampung setelah bekerja beberapa tahun di kota. Melihat potensi perkebunan kopi milik keluarga yang selama ini hanya dijual sebagai biji mentah dengan harga murah, ia bertekad untuk mengolah dan memasarkannya sendiri.\n\nDengan modal seadanya dan ilmu yang dipelajari secara otodidak dari YouTube dan komunitas kopi online, Mas Adi mulai memproduksi kopi bubuk berkualitas. Biji kopi dipetik secara selektif — hanya yang sudah merah matang — lalu dijemur dengan metode natural process yang menghasilkan rasa fruity khas.\n\n"Saya ingin membuktikan bahwa kopi desa kita tidak kalah dari kopi-kopi terkenal. Yang kurang selama ini bukan kualitas, tapi kemasan dan pemasaran," kata Mas Adi penuh keyakinan.',
-    alasanUsaha: 'Mengangkat nilai ekonomi kopi lokal yang selama ini dijual murah dan membuktikan potensi kopi Gumelar ke pasar yang lebih luas.',
     produkUnggulan: 'Kopi Bubuk Robusta Natural Process',
     keunikanProduk: 'Single origin dari lereng Gumelar, petik selektif buah merah matang, natural process yang menghasilkan karakter fruity unik, roasting manual dengan drum roaster.',
     daftarHarga: [
@@ -202,7 +196,6 @@ export const mockUmkmData = [
     kategori: 'kuliner',
     deskripsiSingkat: 'Emping melinjo renyah yang diolah secara tradisional dari buah melinjo pilihan, tersedia dalam berbagai varian rasa.',
     storytelling: 'Bu Ningsih sudah membuat emping melinjo sejak tahun 1998, berawal dari kebutuhan menambah penghasilan keluarga saat krisis ekonomi. Pohon melinjo yang tumbuh subur di halaman rumah dan sepanjang jalan desa menjadi berkah tersendiri.\n\nSetiap pagi, Bu Ningsih dan tiga orang tetangganya yang menjadi pekerja tetap mulai menumbuk biji melinjo satu per satu di atas batu pipisan. Bunyi "tok tok tok" yang berirama sudah menjadi melodi khas dari rumah Bu Ningsih. Emping yang sudah dipipihkan lalu dijemur di halaman hingga kering sempurna.\n\n"Dari emping ini saya bisa menyekolahkan tiga anak sampai sarjana. Saya bersyukur sekali," ujar Bu Ningsih sambil mengelap keringat di dahinya.',
-    alasanUsaha: 'Memanfaatkan hasil alam desa (melinjo) untuk menambah penghasilan keluarga dan memberdayakan ibu-ibu tetangga.',
     produkUnggulan: 'Emping Melinjo Original',
     keunikanProduk: 'Ditumbuk manual satu per satu sehingga tekstur lebih renyah dan merata, melinjo pilihan dari pohon sendiri, tanpa MSG.',
     daftarHarga: [
@@ -235,7 +228,6 @@ export const mockUmkmData = [
     kategori: 'kuliner',
     deskripsiSingkat: 'Martabak manis tebal lembut dengan berbagai pilihan topping — coklat, keju, kacang, dan pisang — dibuat segar setiap sore hari.',
     storytelling: 'Selain keripik tempe, Bu Darmi juga membuat martabak manis sejak 2019 atas permintaan para pelanggan setianya. Resep adonannya diwarisi dari sang ibu yang dulu berjualan di pasar malam Kecamatan Gumelar.',
-    alasanUsaha: 'Melengkapi variasi produk agar pelanggan keripik tempe bisa memesan oleh-oleh yang lebih beragam.',
     produkUnggulan: 'Martabak Manis Coklat Keju',
     keunikanProduk: 'Adonan tanpa pengembang kimia, menggunakan telur kampung, dimasak dengan wajan besi tradisional yang menghasilkan tekstur khas pinggiran renyah.',
     daftarHarga: [
@@ -266,7 +258,6 @@ export const mockUmkmData = [
     kategori: 'kerajinan',
     deskripsiSingkat: 'Besek dan tampah anyaman bambu berkualitas tinggi untuk keperluan hajatan, catering, dan pengemasan produk makanan yang ramah lingkungan.',
     storytelling: 'Di samping tas anyaman modern, Pak Tarno tetap memproduksi besek dan tampah tradisional yang banyak dipesan untuk acara hajatan dan catering di sekitar Banyumas. Permintaan meningkat tajam sejak banyak pelaku usaha kuliner beralih ke kemasan ramah lingkungan.',
-    alasanUsaha: 'Memenuhi permintaan pasar yang semakin sadar akan kemasan ramah lingkungan sebagai pengganti styrofoam dan plastik.',
     produkUnggulan: 'Besek Bambu Anyaman Rapat',
     keunikanProduk: 'Anyaman rapat anti rembes untuk makanan berkuah, bahan bambu lokal, bisa custom ukuran sesuai kebutuhan catering atau hajatan.',
     daftarHarga: [
