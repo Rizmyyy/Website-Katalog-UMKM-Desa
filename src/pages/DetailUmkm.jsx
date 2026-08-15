@@ -17,7 +17,7 @@ export default function DetailUmkm() {
   const { getById, getRecommendations, getByPemilik, loading } = useUmkm()
 
   const umkm = getById(id)
-  const recommendations = getRecommendations(id, 3)
+  const recommendations = getRecommendations(id, 6)
   const produkPemilik = umkm?.idPemilik ? getByPemilik(umkm.idPemilik, id) : []
   const [activeImage, setActiveImage] = useState(null)
   const [lightboxImage, setLightboxImage] = useState(null)
