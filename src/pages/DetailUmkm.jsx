@@ -19,6 +19,8 @@ export default function DetailUmkm() {
   const umkm = getById(id)
   const recommendations = getRecommendations(id, 6)
   const produkPemilik = umkm?.idPemilik ? getByPemilik(umkm.idPemilik, id) : []
+  const validHargaList = umkm?.daftarHarga?.filter(item => Number(item.harga) > 0) || []
+  
   const [activeImage, setActiveImage] = useState(null)
   const [lightboxImage, setLightboxImage] = useState(null)
   const [isStoryExpanded, setIsStoryExpanded] = useState(false)
@@ -364,7 +366,7 @@ export default function DetailUmkm() {
                 </div>
 
                 {/* Harga Premium */}
-                {umkm.daftarHarga && umkm.daftarHarga.length > 0 && (
+                {validHargaList.length > 0 && (
                   <div style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
                     <div style={{ 
                       display: 'inline-flex', 
@@ -380,7 +382,7 @@ export default function DetailUmkm() {
                         letterSpacing: '-0.03em', 
                         lineHeight: 1 
                       }}>
-                        {Number(umkm.daftarHarga[0].harga).toLocaleString('id-ID')}
+                        {Number(validHargaList[0].harga).toLocaleString('id-ID')}
                       </span>
                     </div>
                   </div>
@@ -392,14 +394,14 @@ export default function DetailUmkm() {
                 </p>
 
                 {/* Kotak Keterangan (Daftar Harga & Layanan) */}
-                {umkm.daftarHarga && umkm.daftarHarga.length > 0 && (
+                {validHargaList.length > 0 && (
                   <div style={{ marginBottom: '16px' }}>
                     <div style={{ backgroundColor: '#ffffff', borderRadius: '16px', padding: '12px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 8px 24px rgba(0,0,0,0.04)' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                         <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', boxShadow: '0 2px 4px rgba(180,134,72,0.4)' }}></div>
                         <h3 style={{ fontSize: '14px', fontWeight: 800, margin: 0, color: 'var(--color-text)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Daftar Layanan & Harga</h3>
                       </div>
-                      <PriceTable items={umkm.daftarHarga} />
+                      <PriceTable items={validHargaList} />
                     </div>
                   </div>
                 )}
