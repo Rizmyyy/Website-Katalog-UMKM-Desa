@@ -2995,10 +2995,10 @@ ul, ol {
   /* 1. Edge-to-Edge Image on Mobile */
   .mobile-edge-to-edge {
     border-radius: 0 !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important;
-    margin-right: calc(-50vw + 50%) !important;
+    width: calc(100% + calc(var(--space-container) * 2)) !important;
+    max-width: none !important;
+    margin-left: calc(var(--space-container) * -1) !important;
+    margin-right: calc(var(--space-container) * -1) !important;
     aspect-ratio: 1/1 !important;
   }
   
@@ -3051,24 +3051,12 @@ ul, ol {
 @media (max-width: 768px) {
   .editorial-grid {
     display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-    margin-left: -16px !important;
-    margin-right: -16px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    padding-bottom: 24px !important;
-  }
-  .editorial-grid::-webkit-scrollbar {
-    display: none !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-bottom: 24px !important;
   }
   .editorial-grid > div {
-    flex: 0 0 85vw !important;
-    max-width: 85vw !important;
-    scroll-snap-align: center !important;
+    max-width: 100% !important;
   }
 }
 
