@@ -22,10 +22,9 @@ export const uploadToCloudinary = async (base64Data, filename = 'image') => {
     formData.append('file', finalBase64);
     formData.append('upload_preset', uploadPreset);
     
-    // Optional: adding public_id to keep the filename intact on Cloudinary
-    if (filename) {
-      formData.append('public_id', filename.replace(/\.[^/.]+$/, ""));
-    }
+    // We purposely DO NOT append 'public_id' here.
+    // Let Cloudinary generate a unique random ID for every image.
+    // This prevents images with the same filename (e.g., '1.jpg', 'image.png') from overwriting each other.
 
     const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
       method: 'POST',
