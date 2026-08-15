@@ -158,7 +158,7 @@ export function UmkmProvider({ children }) {
   const uploadImages = useCallback(async (files) => {
     if (isFirebaseConfigured && db) {
       const urls = []
-      const { uploadToImgBB } = await import('@/utils/imageUpload')
+      const { uploadToCloudinary } = await import('@/utils/imageUpload')
       
       const compressionOptions = {
         maxSizeMB: 0.8, // Maksimal 800KB
@@ -189,11 +189,11 @@ export function UmkmProvider({ children }) {
           
           const base64String = await base64Promise
           
-          // Kirim ke ImgBB
-          const url = await uploadToImgBB(base64String, file.name.replace(/\.[^/.]+$/, ""))
+          // Kirim ke Cloudinary
+          const url = await uploadToCloudinary(base64String, file.name.replace(/\.[^/.]+$/, ""))
           urls.push(url)
         } catch (error) {
-          console.error("Gagal mengunggah gambar ke ImgBB:", error)
+          console.error("Gagal mengunggah gambar ke Cloudinary:", error)
         }
       }
       return urls

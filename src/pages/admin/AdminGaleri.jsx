@@ -3,7 +3,7 @@ import { useGaleri } from '@/hooks/useGaleri'
 import { useToast } from '@/components/admin/Toast'
 import ConfirmDialog from '@/components/admin/ConfirmDialog'
 import imageCompression from 'browser-image-compression'
-import { uploadToImgBB } from '@/utils/imageUpload'
+import { uploadToCloudinary } from '@/utils/imageUpload'
 
 export default function AdminGaleri() {
   const { galeri, loading, addFoto, updateFoto, deleteFoto } = useGaleri()
@@ -50,10 +50,10 @@ export default function AdminGaleri() {
     setIsUploading(true)
     try {
       let finalSrc = formData.src;
-      // Jika src berupa Base64 (gambar baru diunggah), kirim ke ImgBB dulu
+      // Jika src berupa Base64 (gambar baru diunggah), kirim ke Cloudinary dulu
       if (finalSrc.startsWith('data:image')) {
         addToast('Sedang mengunggah gambar ke server...', 'info')
-        finalSrc = await uploadToImgBB(finalSrc, formData.title.replace(/\s+/g, '-'));
+        finalSrc = await uploadToCloudinary(finalSrc, formData.title.replace(/\s+/g, '-'));
       }
 
       const finalData = { ...formData, src: finalSrc };

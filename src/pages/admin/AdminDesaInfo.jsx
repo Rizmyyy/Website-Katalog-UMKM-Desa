@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useDesa } from '@/hooks/useDesa'
 import { useToast } from '@/components/admin/Toast'
 import imageCompression from 'browser-image-compression'
-import { uploadToImgBB } from '@/utils/imageUpload'
+import { uploadToCloudinary } from '@/utils/imageUpload'
 
 export default function AdminDesaInfo() {
   const { desaInfo, loading, updateDesaInfo } = useDesa()
@@ -152,16 +152,16 @@ export default function AdminDesaInfo() {
     try {
       let finalData = JSON.parse(JSON.stringify(formData));
       
-      // Upload Logo ke ImgBB jika berupa Base64 baru
+      // Upload Logo ke Cloudinary jika berupa Base64 baru
       if (finalData.identitas?.logo?.startsWith('data:image')) {
         addToast('Mengunggah logo ke server...', 'info')
-        finalData.identitas.logo = await uploadToImgBB(finalData.identitas.logo, 'logo-desa')
+        finalData.identitas.logo = await uploadToCloudinary(finalData.identitas.logo, 'logo-desa')
       }
 
-      // Upload Foto Kades ke ImgBB jika berupa Base64 baru
+      // Upload Foto Kades ke Cloudinary jika berupa Base64 baru
       if (finalData.beranda?.kades?.foto?.startsWith('data:image')) {
         addToast('Mengunggah foto Kepala Desa ke server...', 'info')
-        finalData.beranda.kades.foto = await uploadToImgBB(finalData.beranda.kades.foto, 'foto-kades')
+        finalData.beranda.kades.foto = await uploadToCloudinary(finalData.beranda.kades.foto, 'foto-kades')
       }
 
       await updateDesaInfo(finalData)
