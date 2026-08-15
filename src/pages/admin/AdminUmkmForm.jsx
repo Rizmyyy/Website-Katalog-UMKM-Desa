@@ -132,19 +132,35 @@ export default function AdminUmkmForm() {
     try {
       // Process main images
       const newFiles = images.filter((img) => img.isNew && img.file).map((img) => img.file)
-      let allUrls = images.filter((img) => !img.isNew).map((img) => img.url)
+      let uploadedUrls = []
       if (newFiles.length > 0) {
-        const uploadedUrls = await uploadImages(newFiles)
-        allUrls = [...allUrls, ...uploadedUrls]
+        uploadedUrls = await uploadImages(newFiles)
       }
+      let newIdx = 0;
+      const allUrls = images.map((img) => {
+        if (img.isNew) {
+          const url = uploadedUrls[newIdx]
+          newIdx++
+          return url
+        }
+        return img.url
+      })
 
       // Process "proses pembuatan" images
       const newProsesFiles = prosesImages.filter((img) => img.isNew && img.file).map((img) => img.file)
-      let allProsesUrls = prosesImages.filter((img) => !img.isNew).map((img) => img.url)
+      let uploadedProsesUrls = []
       if (newProsesFiles.length > 0) {
-        const uploadedProsesUrls = await uploadImages(newProsesFiles)
-        allProsesUrls = [...allProsesUrls, ...uploadedProsesUrls]
+        uploadedProsesUrls = await uploadImages(newProsesFiles)
       }
+      let newProsesIdx = 0;
+      const allProsesUrls = prosesImages.map((img) => {
+        if (img.isNew) {
+          const url = uploadedProsesUrls[newProsesIdx]
+          newProsesIdx++
+          return url
+        }
+        return img.url
+      })
 
       // Process price data
       const processedPrices = form.daftarHarga

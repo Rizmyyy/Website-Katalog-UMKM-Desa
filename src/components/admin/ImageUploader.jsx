@@ -5,6 +5,7 @@ import heic2any from 'heic2any'
 export default function ImageUploader({ images = [], onChange }) {
   const [dragOver, setDragOver] = useState(false)
   const [isCompressing, setIsCompressing] = useState(false)
+  const [draggedIndex, setDraggedIndex] = useState(null)
   const fileInputRef = useRef(null)
 
   const handleFiles = async (files) => {
@@ -83,6 +84,30 @@ export default function ImageUploader({ images = [], onChange }) {
     onChange(updated)
   }
 
+  const handleDragStartItem = (e, index) => {
+    setDraggedIndex(index)
+    // Required for Firefox
+    if (e.dataTransfer) {
+      e.dataTransfer.effectAllowed = 'move'
+      e.dataTransfer.setData('text/plain', index)
+    }
+  }
+
+  const handleDragEnterItem = (e, index) => {
+    e.preventDefault()
+    if (draggedIndex === null || draggedIndex === index) return
+    const newImages = [...images]
+    const item = newImages[draggedIndex]
+    newImages.splice(draggedIndex, 1)
+    newImages.splice(index, 0, item)
+    setDraggedIndex(index)
+    onChange(newImages)
+  }
+
+  const handleDragEndItem = () => {
+    setDraggedIndex(null)
+  }
+
   return (
     <div>
       <div
@@ -141,7 +166,21 @@ export default function ImageUploader({ images = [], onChange }) {
       {images.length > 0 && (
         <div className="upload-preview-grid">
           {images.map((img, index) => (
-            <div key={index} className="upload-preview-item">
+            <div 
+              key={index} 
+              className={`upload-preview-item ${draggedIndex === index ? 'dragging' : ''}`}
+              draggable={!isCompressing}
+              onDragStart={(e) => handleDragStartItem(e, index)}
+              onDragEnter={(e) => handleDragEnterItem(e, index)}
+              onDragEnd={handleDragEndItem}
+              onDragOver={(e) => e.preventDefault()}
+              style={{ 
+                cursor: isCompressing ? 'default' : 'move', 
+                opacity: draggedIndex === index ? 0.4 : 1,
+                border: draggedIndex === index ? '2px dashed var(--color-primary)' : 'none'
+              }}
+              title="Seret untuk memindahkan urutan"
+            >
               <img
                 src={img.preview || img.url || img}
                 alt={`Foto ${index + 1}`}
