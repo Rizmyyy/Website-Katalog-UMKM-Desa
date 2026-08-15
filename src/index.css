@@ -2831,6 +2831,12 @@ ul, ol {
   width: 100%;
 }
 
+.detail-layout > div {
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 .detail-main {
   display: flex;
   flex-direction: column;
