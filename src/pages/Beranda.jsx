@@ -24,6 +24,11 @@ export default function Beranda() {
   const carouselRef = useRef(null)
   const galeriRef = useRef(null)
 
+  // Hitung jumlah pelaku UMKM unik berdasarkan idPemilik atau namaPemilik
+  const totalPelaku = useMemo(() => {
+    return new Set(umkmList.map(item => item.idPemilik || item.namaPemilik)).size;
+  }, [umkmList])
+
   // Efek Auto-Scroll untuk Carousel Produk & Galeri di Mobile
   useEffect(() => {
     let interval;
@@ -464,7 +469,7 @@ export default function Beranda() {
                 {/* Stat 2 */}
                 <div style={{ background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: 'clamp(12px, 3vw, 28px)', display: 'flex', flexDirection: 'column', gap: '4px', transition: 'all 0.3s ease' }} className="stat-glass-card">
                   <span style={{ fontSize: 'clamp(24px, 5vw, 40px)', fontWeight: '900', color: '#fcd34d', lineHeight: '1', letterSpacing: '-0.03em' }}>
-                    {umkmList.length || '24'}
+                    {totalPelaku || '24'}
                   </span>
                   <span style={{ fontSize: 'clamp(11px, 2.5vw, 14px)', color: 'rgba(255,255,255,0.7)', fontWeight: '500', lineHeight: '1.3' }}>Pelaku UMKM aktif</span>
                 </div>
