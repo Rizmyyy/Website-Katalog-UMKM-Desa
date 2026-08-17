@@ -162,6 +162,78 @@ export default function Galeri() {
 
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {lightboxIndex !== null && filteredGaleri[lightboxIndex] && (
+        <div 
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
+            zIndex: 9999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '24px',
+            animation: 'fadeIn 0.2s ease-out'
+          }}
+          onClick={() => setLightboxIndex(null)}
+        >
+          <style>{`
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+            @keyframes zoomIn {
+              from { transform: scale(0.95); opacity: 0; }
+              to { transform: scale(1); opacity: 1; }
+            }
+          `}</style>
+          
+          <button
+            onClick={() => setLightboxIndex(null)}
+            style={{
+              position: 'absolute',
+              top: '24px',
+              right: '24px',
+              width: '44px',
+              height: '44px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              color: 'white',
+              border: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'background-color 0.2s',
+              zIndex: 10000
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'}
+            onMouseOut={(e) => e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'}
+            aria-label="Tutup foto"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+
+          <img
+            src={filteredGaleri[lightboxIndex].url || filteredGaleri[lightboxIndex].src}
+            alt={filteredGaleri[lightboxIndex].caption || filteredGaleri[lightboxIndex].title || "Galeri"}
+            style={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              objectFit: 'contain',
+              borderRadius: '8px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
+              animation: 'zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+              cursor: 'zoom-out'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </>
   )
 }
