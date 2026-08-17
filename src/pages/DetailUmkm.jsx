@@ -476,7 +476,7 @@ export default function DetailUmkm() {
                           transition: 'max-height 0.4s ease-in-out',
                           position: 'relative', zIndex: 1
                         }}>
-                          <p style={{ fontSize: 'clamp(13px, 3.5vw, 16px)', color: 'var(--color-text)', lineHeight: 1.6, fontWeight: 500, margin: 0, whiteSpace: 'pre-wrap' }}>{umkm.storytelling}</p>
+                          <p style={{ fontSize: 'clamp(13px, 3.5vw, 16px)', color: '#1f2937', lineHeight: 1.6, fontWeight: 500, margin: 0, whiteSpace: 'pre-wrap' }}>{umkm.storytelling}</p>
                         </div>
 
                         {showStoryToggle && !isStoryExpanded && (
