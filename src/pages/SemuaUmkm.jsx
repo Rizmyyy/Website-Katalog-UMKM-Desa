@@ -28,8 +28,13 @@ export default function SemuaUmkm() {
 
   const categories = ['Semua', 'Kuliner', 'Kerajinan', 'Pertanian']
 
+  // Buat versi acak dari umkmList yang hanya dikalkulasi saat data umkmList berubah (saat pertama load/refresh)
+  const randomizedUmkmList = useMemo(() => {
+    return [...umkmList].sort(() => Math.random() - 0.5)
+  }, [umkmList])
+
   const filteredList = useMemo(() => {
-    let result = activeCategory === 'Semua' ? umkmList : getByCategory(activeCategory)
+    let result = activeCategory === 'Semua' ? randomizedUmkmList : getByCategory(activeCategory)
 
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().trim()
@@ -43,7 +48,7 @@ export default function SemuaUmkm() {
     }
 
     return result
-  }, [activeCategory, searchQuery, getByCategory, umkmList])
+  }, [activeCategory, searchQuery, getByCategory, randomizedUmkmList])
 
   const handleCategoryChange = (category) => {
     setActiveCategory(category)
