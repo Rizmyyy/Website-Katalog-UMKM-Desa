@@ -655,10 +655,10 @@ export default function DetailUmkm() {
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                         <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'var(--color-primary)' }}></div>
-                        <h2 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--color-text)', margin: 0 }}>Di Balik Layar</h2>
+                        <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#1f2937', margin: 0 }}>Di Balik Layar</h2>
                       </div>
                       <div style={{ marginBottom: '20px' }}>
-                        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', lineHeight: 1.5 }}>
+                        <p style={{ fontSize: '14px', color: '#4b5563', margin: '0 0 8px 0', lineHeight: 1.5 }}>
                           Intip proses pembuatan produk ini langsung dari dapur produksi {umkm.namaUmkm}.
                         </p>
                       </div>
@@ -778,9 +778,9 @@ export default function DetailUmkm() {
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                         <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'var(--color-accent)' }}></div>
-                        <h2 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--color-text)', margin: 0 }}>Lokasi Usaha</h2>
+                        <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#1f2937', margin: 0 }}>Lokasi Usaha</h2>
                       </div>
-                      <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '20px', lineHeight: 1.5 }}>
+                      <p style={{ fontSize: '14px', color: '#4b5563', marginBottom: '20px', lineHeight: 1.5 }}>
                         Kunjungi lokasi produksi kami secara langsung di peta berikut.
                       </p>
                       <div style={{ 
@@ -809,7 +809,7 @@ export default function DetailUmkm() {
           <div className="container">
             <ScrollReveal>
               <div style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 48px)' }}>
-                <h2 style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 800, color: 'var(--color-text-dark, #111827)', marginBottom: '16px', letterSpacing: '-0.02em' }}>
+                <h2 style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 800, color: 'var(--color-text)', marginBottom: '16px', letterSpacing: '-0.02em' }}>
                   UMKM Lain yang Mungkin <span style={{ color: 'var(--color-primary-dark)' }}>Anda Suka</span>
                 </h2>
                 <div style={{ width: '60px', height: '6px', background: 'linear-gradient(to right, var(--color-primary-dark), #10b981)', borderRadius: '100px', margin: '0 auto' }}></div>
