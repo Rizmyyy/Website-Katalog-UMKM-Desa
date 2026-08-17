@@ -17,7 +17,7 @@ export default function PriceTable({ items }) {
           <div style={{ 
             fontWeight: 700, 
             fontSize: '16px', 
-            color: 'var(--color-text)',
+            color: '#1f2937',
             maxWidth: '60%'
           }}>
             {item.namaProduk}

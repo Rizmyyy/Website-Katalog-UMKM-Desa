@@ -389,7 +389,7 @@ export default function DetailUmkm() {
                 )}
                 
                 {/* Deskripsi Produk */}
-                <p style={{ fontSize: '16px', color: '#333333', lineHeight: 1.6, marginBottom: '16px', fontWeight: 400 }}>
+                <p style={{ fontSize: '16px', color: 'var(--color-text)', lineHeight: 1.6, marginBottom: '16px', fontWeight: 400 }}>
                   {umkm.deskripsiSingkat}
                 </p>
 
@@ -399,7 +399,7 @@ export default function DetailUmkm() {
                     <div style={{ backgroundColor: '#ffffff', borderRadius: '16px', padding: '12px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 8px 24px rgba(0,0,0,0.04)' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                         <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', boxShadow: '0 2px 4px rgba(180,134,72,0.4)' }}></div>
-                        <h3 style={{ fontSize: '14px', fontWeight: 800, margin: 0, color: 'var(--color-text)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Daftar Layanan & Harga</h3>
+                        <h3 style={{ fontSize: '14px', fontWeight: 800, margin: 0, color: '#1f2937', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Daftar Layanan & Harga</h3>
                       </div>
                       <PriceTable items={validHargaList} />
                     </div>
@@ -417,10 +417,10 @@ export default function DetailUmkm() {
                   borderTop: '4px solid #22c55e',
                   padding: '16px'
                 }}>
-                  <h3 className="mobile-hide-text" style={{ fontSize: '18px', fontWeight: 800, color: 'var(--color-text)', margin: '0 0 4px 0' }}>
+                  <h3 className="mobile-hide-text" style={{ fontSize: '18px', fontWeight: 800, color: '#1f2937', margin: '0 0 4px 0' }}>
                     Tertarik memesan?
                   </h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 12px 0', lineHeight: 1.4, fontSize: '13px' }}>
+                  <p style={{ fontSize: '14px', color: '#4b5563', margin: '0 0 12px 0', lineHeight: 1.4, fontSize: '13px' }}>
                     Hubungi pemilik usaha sekarang juga untuk memesan atau bertanya detail.
                   </p>
                   <a
