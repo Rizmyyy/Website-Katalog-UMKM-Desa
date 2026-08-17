@@ -389,7 +389,7 @@ export default function DetailUmkm() {
                 )}
                 
                 {/* Deskripsi Produk */}
-                <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '16px', fontWeight: 400 }}>
+                <p style={{ fontSize: '16px', color: '#333333', lineHeight: 1.6, marginBottom: '16px', fontWeight: 400 }}>
                   {umkm.deskripsiSingkat}
                 </p>
 
