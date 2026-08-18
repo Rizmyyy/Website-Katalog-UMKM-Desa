@@ -98,36 +98,7 @@ export default function AdminDesaInfo() {
     }
   }
 
-  const handleKadesPhotoUpload = async (e) => {
-    const file = e.target.files[0]
-    if (!file) return
 
-    try {
-      const options = {
-        maxSizeMB: 0.2, // 200KB for photo
-        maxWidthOrHeight: 800,
-        useWebWorker: true
-      }
-      const compressedFile = await imageCompression(file, options)
-      const reader = new FileReader()
-      reader.onloadend = () => {
-        setFormData(prev => ({
-          ...prev,
-          beranda: {
-            ...prev.beranda,
-            kades: {
-              ...prev.beranda.kades,
-              foto: reader.result
-            }
-          }
-        }))
-      }
-      reader.readAsDataURL(compressedFile)
-    } catch (error) {
-      console.error('Upload error:', error)
-      addToast('Gagal memproses foto kepala desa.', 'error')
-    }
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -158,11 +129,7 @@ export default function AdminDesaInfo() {
         finalData.identitas.logo = await uploadToCloudinary(finalData.identitas.logo, 'logo-desa')
       }
 
-      // Upload Foto Kades ke Cloudinary jika berupa Base64 baru
-      if (finalData.beranda?.kades?.foto?.startsWith('data:image')) {
-        addToast('Mengunggah foto Kepala Desa ke server...', 'info')
-        finalData.beranda.kades.foto = await uploadToCloudinary(finalData.beranda.kades.foto, 'foto-kades')
-      }
+
 
       await updateDesaInfo(finalData)
       addToast('Pengaturan desa berhasil disimpan!', 'success')
@@ -285,32 +252,7 @@ export default function AdminDesaInfo() {
               </div>
 
               <h3 style={{ marginTop: 32, marginBottom: 16, color: 'var(--color-primary)', borderBottom: '1px solid var(--color-border-light)', paddingBottom: 8 }}>Sambutan Kepala Desa</h3>
-              <div className="form-group">
-                <label className="form-label">Nama Kepala Desa</label>
-                <input 
-                  type="text" 
-                  className="form-input" 
-                  value={formData.beranda?.kades?.nama || ''} 
-                  onChange={(e) => handleNestedChange(e, 'beranda', 'kades', 'nama')} 
-                />
-              </div>
-              <div className="form-group">
-                <label className="form-label">Foto Kepala Desa</label>
-                {formData.beranda?.kades?.foto ? (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', background: 'var(--color-surface-alt)', padding: '16px', borderRadius: '12px', border: '1px solid var(--color-border)' }}>
-                    <img src={formData.beranda.kades.foto} alt="Foto Kades" style={{ height: 64, width: 64, borderRadius: '50%', objectFit: 'cover' }} />
-                    <div>
-                      <p style={{ margin: '0 0 8px 0', fontWeight: '500', color: 'var(--color-primary)' }}>✓ Tersimpan Permanen</p>
-                      <label className="btn btn-outline" style={{ cursor: 'pointer', fontSize: '13px', padding: '6px 12px', display: 'inline-block' }}>
-                        Ganti Foto
-                        <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleKadesPhotoUpload} />
-                      </label>
-                    </div>
-                  </div>
-                ) : (
-                  <input type="file" accept="image/*" className="form-input" onChange={handleKadesPhotoUpload} />
-                )}
-              </div>
+
               <div className="form-group">
                 <label className="form-label">Teks Sambutan Singkat</label>
                 <textarea 

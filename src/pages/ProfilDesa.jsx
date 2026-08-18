@@ -157,11 +157,7 @@ export default function ProfilDesa() {
             {desaInfo?.beranda?.kades?.teks && (
               <ScrollReveal className="bento-item bento-kades" style={{ alignItems: 'center', textAlign: 'center', background: 'linear-gradient(to bottom, var(--color-surface), var(--color-surface-alt))' }}>
                 <div style={{ position: 'relative', marginBottom: '24px', display: 'inline-block' }}>
-                  {desaInfo?.beranda?.kades?.foto ? (
-                    <img src={desaInfo.beranda.kades.foto} alt={desaInfo.beranda.kades.nama} style={{ position: 'relative', zIndex: 1, width: '150px', height: '150px', objectFit: 'cover', borderRadius: '50%', boxShadow: '0 0 0 4px var(--color-surface), 0 0 0 7px var(--color-primary), 0 10px 24px rgba(0,0,0,0.15)' }} />
-                  ) : (
-                    <div style={{ position: 'relative', zIndex: 1, width: '150px', height: '150px', background: 'var(--color-surface-container)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '48px', boxShadow: '0 0 0 4px var(--color-surface), 0 0 0 7px var(--color-primary)' }}>👤</div>
-                  )}
+                  <img src="/pakkades.png" alt="Bpk. Imam Tobroni" style={{ position: 'relative', zIndex: 1, width: '150px', height: '150px', objectFit: 'cover', borderRadius: '50%', boxShadow: '0 0 0 4px var(--color-surface), 0 0 0 7px var(--color-primary), 0 10px 24px rgba(0,0,0,0.15)', backgroundColor: '#f3f4f6' }} />
                 </div>
                 <div style={{ color: 'var(--color-primary)', fontSize: '48px', lineHeight: 0.5, marginBottom: '16px', opacity: 0.3 }}>&ldquo;</div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '20px' }}>
@@ -213,7 +209,7 @@ export default function ProfilDesa() {
                   )}
                 </div>
                 <div>
-                  <h4 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-dark)', marginBottom: '4px' }}>{desaInfo.beranda.kades.nama}</h4>
+                  <h4 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-dark)', marginBottom: '4px' }}>Bpk. Imam Tobroni</h4>
                   <p style={{ fontSize: '13px', color: 'var(--color-primary-dark)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Kepala Desa
                   </p>
