@@ -3,6 +3,7 @@ import { useGaleri } from '@/hooks/useGaleri'
 import { useToast } from '@/components/admin/Toast'
 import ConfirmDialog from '@/components/admin/ConfirmDialog'
 import imageCompression from 'browser-image-compression'
+import heic2any from 'heic2any'
 import { uploadToCloudinary } from '@/utils/imageUpload'
 
 export default function AdminGaleri() {
@@ -104,25 +105,33 @@ export default function AdminGaleri() {
             <label className="form-label">Upload Foto</label>
             <input 
               type="file" 
-              accept="image/*"
+              accept="image/*,.heic,.heif"
               className="form-input" 
               onChange={async (e) => {
                 const file = e.target.files[0]
                 if (file) {
                   try {
+                    let processFile = file;
+                    if (file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif')) {
+                      addToast('Sedang memproses gambar HEIC...', 'info')
+                      const convertedBlob = await heic2any({ blob: file, toType: 'image/jpeg', quality: 0.9 })
+                      processFile = new File([convertedBlob], file.name.replace(/\.heic$|\.heif$/i, '.jpg'), { type: 'image/jpeg' })
+                    }
+
                     const options = {
                       maxSizeMB: 0.8, // Increased for better quality
                       maxWidthOrHeight: 1920,
                       useWebWorker: true
                     }
-                    const compressedFile = await imageCompression(file, options)
+                    const compressedFile = await imageCompression(processFile, options)
                     const reader = new FileReader()
                     reader.onloadend = () => {
                       setFormData({...formData, src: reader.result})
                     }
                     reader.readAsDataURL(compressedFile)
                   } catch (error) {
-                    console.error('Gagal mengompres gambar:', error)
+                    console.error('Gagal memproses gambar:', error)
+                    addToast('Gagal memproses gambar.', 'error')
                   }
                 }
               }}
