@@ -11,6 +11,7 @@ export default function ProfilDesa() {
   const { umkmList, loading: umkmLoading } = useUmkm()
   const [expandedKades, setExpandedKades] = useState(false)
   const [expandedSejarah, setExpandedSejarah] = useState(false)
+  const [expandedVisi, setExpandedVisi] = useState(false)
 
   if (desaLoading || umkmLoading) {
     return <div className="loading-screen"><div className="spinner"></div></div>
@@ -135,18 +136,16 @@ export default function ProfilDesa() {
               .bento-kontak { grid-column: span 12; }
               .bento-media { grid-column: span 6; } /* Video dan Map jadi 2 per baris */
               
-              /* Jika ingin Visi dan Kontak juga 2 per baris, kita buat span 6: */
-              .bento-visi, .bento-kontak { grid-column: span 6; }
-              
               .media-content {
                 min-height: 140px !important;
               }
               .contact-wrapper {
-                flex-direction: column !important;
+                flex-direction: row !important;
                 gap: 8px !important;
               }
               .contact-wrapper > div {
-                padding: 12px 10px !important;
+                flex: 1;
+                padding: 12px 8px !important;
                 gap: 8px !important;
                 flex-direction: column;
                 text-align: center;
@@ -160,19 +159,9 @@ export default function ProfilDesa() {
                 word-break: break-all;
               }
               
-              /* Penyesuaian teks Visi di mobile agar muat setengah layar */
               .bento-visi h2, .bento-kontak h2 {
-                font-size: 16px !important;
-                padding-left: 10px !important;
+                font-size: 20px !important;
                 margin-bottom: 16px !important;
-              }
-              .bento-visi h3 {
-                font-size: 14px !important;
-                margin-bottom: 8px !important;
-              }
-              .bento-visi p, .bento-visi div {
-                font-size: 13px !important;
-                line-height: 1.5 !important;
               }
             }
           `}</style>
@@ -294,32 +283,68 @@ export default function ProfilDesa() {
             {/* --- BARIS 2 --- */}
             {/* Visi Misi Card */}
             <ScrollReveal className="bento-item bento-visi" delay={2}>
-              <div style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: '24px' }}>
                 <h2 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--color-text-dark)', margin: 0, paddingLeft: '16px', borderLeft: '5px solid #d97706' }}>Visi & Misi</h2>
               </div>
               
-              <div style={{ padding: '0 8px' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-dark)', marginBottom: '16px', textTransform: 'uppercase' }}>
+              <div style={{ 
+                padding: '0 8px',
+                display: '-webkit-box',
+                WebkitLineClamp: expandedVisi ? 'unset' : 8,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                transition: 'all 0.3s ease'
+              }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-dark)', marginBottom: '12px', textTransform: 'uppercase' }}>
                   Visi
                 </h3>
-                <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--color-text-secondary)', marginBottom: '32px' }}>
+                <p style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
                   {desaInfo.visi || 'Mewujudkan desa yang mandiri, sejahtera, dan berbudaya melalui pemberdayaan ekonomi kerakyatan.'}
                 </p>
 
-                <h3 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-dark)', marginBottom: '16px', textTransform: 'uppercase' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-dark)', marginBottom: '12px', textTransform: 'uppercase' }}>
                   Misi
                 </h3>
                 {desaInfo.misi ? (
-                  <div style={{ fontSize: '16px', lineHeight: '2', color: 'var(--color-text-secondary)', whiteSpace: 'pre-line' }}>
+                  <div style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--color-text-secondary)', whiteSpace: 'pre-line' }}>
                     {desaInfo.misi}
                   </div>
                 ) : (
-                  <div style={{ fontSize: '16px', lineHeight: '2', color: 'var(--color-text-secondary)' }}>
+                  <div style={{ fontSize: '16px', lineHeight: '1.8', color: 'var(--color-text-secondary)' }}>
                     - Mengembangkan potensi UMKM warga<br/>
                     - Meningkatkan kualitas infrastruktur desa
                   </div>
                 )}
               </div>
+              
+              <button 
+                onClick={() => setExpandedVisi(!expandedVisi)}
+                style={{ 
+                  background: 'none', 
+                  border: 'none', 
+                  color: 'var(--color-primary)', 
+                  fontWeight: '700', 
+                  fontSize: '14px', 
+                  padding: '4px 8px', 
+                  marginTop: '16px',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  transition: 'color 0.2s ease',
+                  alignSelf: 'flex-start'
+                }}
+                onMouseOver={(e) => e.target.style.color = 'var(--color-primary-dark)'}
+                onMouseOut={(e) => e.target.style.color = 'var(--color-primary)'}
+              >
+                {expandedVisi ? 'Tutup Selengkapnya' : 'Baca Selengkapnya'}
+                <svg 
+                  width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                  style={{ transform: expandedVisi ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s ease' }}
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
             </ScrollReveal>
 
             {/* Kontak Card */}
