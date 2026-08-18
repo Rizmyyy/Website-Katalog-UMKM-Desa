@@ -5,7 +5,7 @@ export default function SEO({ title, description, image, url }) {
   const { desaInfo } = useDesa()
   const siteName = desaInfo?.identitas?.namaWeb || 'UMKM Gumelar Kidul'
   const defaultTitle = siteName
-  const pageTitle = title ? `${title} — ${siteName}` : defaultTitle
+  const pageTitle = title ? `${title} | ${siteName}` : defaultTitle
   
   const defaultDescription = desaInfo?.deskripsi || 'Sistem Informasi dan Manajemen UMKM Desa.'
   const pageDescription = description || defaultDescription
