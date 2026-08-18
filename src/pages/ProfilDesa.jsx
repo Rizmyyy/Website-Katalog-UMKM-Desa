@@ -154,10 +154,9 @@ export default function ProfilDesa() {
             
             {/* --- BARIS 1 --- */}
             {/* Kades Card */}
-            {desaInfo?.beranda?.kades?.teks && (
-              <ScrollReveal className="bento-item bento-kades" style={{ alignItems: 'center', textAlign: 'center', background: 'linear-gradient(to bottom, var(--color-surface), var(--color-surface-alt))' }}>
-                <div style={{ position: 'relative', marginBottom: '24px', display: 'inline-block' }}>
-                  <img src="/pakkades.png" alt="Bpk. Imam Tobroni" style={{ position: 'relative', zIndex: 1, width: '150px', height: '150px', objectFit: 'cover', borderRadius: '50%', boxShadow: '0 0 0 4px var(--color-surface), 0 0 0 7px var(--color-primary), 0 10px 24px rgba(0,0,0,0.15)', backgroundColor: '#f3f4f6' }} />
+            <ScrollReveal className="bento-item bento-kades" style={{ alignItems: 'center', textAlign: 'center', background: 'linear-gradient(to bottom, var(--color-surface), var(--color-surface-alt))' }}>
+              <div style={{ position: 'relative', marginBottom: '24px', display: 'inline-block' }}>
+                <img src="/pakkades.png" alt="Bpk. Imam Tobroni" style={{ position: 'relative', zIndex: 1, width: '150px', height: '150px', objectFit: 'cover', borderRadius: '50%', boxShadow: '0 0 0 4px var(--color-surface), 0 0 0 7px var(--color-primary), 0 10px 24px rgba(0,0,0,0.15)', backgroundColor: '#f3f4f6' }} />
                 </div>
                 <div style={{ color: 'var(--color-primary)', fontSize: '48px', lineHeight: 0.5, marginBottom: '16px', opacity: 0.3 }}>&ldquo;</div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', width: '100%', marginBottom: '20px' }}>
@@ -215,7 +214,6 @@ export default function ProfilDesa() {
                   </p>
                 </div>
               </ScrollReveal>
-            )}
 
             {/* Sejarah Card */}
             <ScrollReveal className="bento-item bento-sejarah" delay={1}>
