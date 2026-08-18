@@ -117,35 +117,62 @@ export default function ProfilDesa() {
             .bento-media { grid-column: span 6; padding: 0; overflow: hidden; }
             
             @media (max-width: 992px) {
-              .bento-sejarah, .bento-kades, .bento-visi, .bento-kontak, .bento-media {
-                grid-column: span 12;
-              }
-              .bento-kades { order: -1; } /* Kades di atas di mobile */
+              .bento-sejarah { grid-column: span 12; }
+              .bento-kades { grid-column: span 12; order: -1; }
+              .bento-visi { grid-column: span 6; }
+              .bento-kontak { grid-column: span 6; }
+              .bento-media { grid-column: span 6; }
             }
             @media (max-width: 768px) {
               .bento-grid {
-                gap: 16px;
+                gap: 12px;
               }
               .bento-item {
-                padding: 20px;
+                padding: 16px;
                 border-radius: 16px;
               }
+              .bento-visi { grid-column: span 12; }
+              .bento-kontak { grid-column: span 12; }
+              .bento-media { grid-column: span 6; } /* Video dan Map jadi 2 per baris */
+              
+              /* Jika ingin Visi dan Kontak juga 2 per baris, kita buat span 6: */
+              .bento-visi, .bento-kontak { grid-column: span 6; }
+              
               .media-content {
-                min-height: 200px !important;
+                min-height: 140px !important;
               }
               .contact-wrapper {
                 flex-direction: column !important;
                 gap: 8px !important;
               }
               .contact-wrapper > div {
-                padding: 10px 14px !important;
-                gap: 12px !important;
+                padding: 12px 10px !important;
+                gap: 8px !important;
+                flex-direction: column;
+                text-align: center;
               }
               .contact-wrapper-icon {
-                font-size: 20px !important;
+                font-size: 24px !important;
+                margin-bottom: 4px;
               }
               .contact-wrapper-text {
+                font-size: 13px !important;
+                word-break: break-all;
+              }
+              
+              /* Penyesuaian teks Visi di mobile agar muat setengah layar */
+              .bento-visi h2, .bento-kontak h2 {
+                font-size: 16px !important;
+                padding-left: 10px !important;
+                margin-bottom: 16px !important;
+              }
+              .bento-visi h3 {
                 font-size: 14px !important;
+                margin-bottom: 8px !important;
+              }
+              .bento-visi p, .bento-visi div {
+                font-size: 13px !important;
+                line-height: 1.5 !important;
               }
             }
           `}</style>
