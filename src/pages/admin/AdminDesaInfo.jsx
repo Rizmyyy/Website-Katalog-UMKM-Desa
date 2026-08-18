@@ -14,10 +14,10 @@ export default function AdminDesaInfo() {
 
   // Initialize form when data loads
   useEffect(() => {
-    if (desaInfo && !formData) {
+    if (!loading && desaInfo && !formData) {
       setFormData(desaInfo)
     }
-  }, [desaInfo, formData])
+  }, [loading, desaInfo, formData])
 
   if (loading || !formData) {
     return <div style={{ padding: '24px', textAlign: 'center' }}>Memuat pengaturan desa...</div>
