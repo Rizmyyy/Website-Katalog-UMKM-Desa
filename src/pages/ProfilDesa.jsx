@@ -85,7 +85,7 @@ export default function ProfilDesa() {
                 <div style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: '900', color: '#fcd34d', lineHeight: '1', marginBottom: '8px' }}>
                   2026
                 </div>
-                <div style={{ fontSize: '14px', opacity: 0.9, fontWeight: '500' }}>Tahun Digitalisasi</div>
+                <div style={{ fontSize: '14px', opacity: 0.9, fontWeight: '500' }}>Tahun sistem diluncurkan</div>
               </div>
             </div>
           </ScrollReveal>
