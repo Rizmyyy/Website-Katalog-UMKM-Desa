@@ -12,6 +12,8 @@ export default function ProfilDesa() {
   const [expandedKades, setExpandedKades] = useState(false)
   const [expandedSejarah, setExpandedSejarah] = useState(false)
   const [expandedVisi, setExpandedVisi] = useState(false)
+  
+  const uniquePelakuCount = umkmList ? new Set(umkmList.map(u => (u.namaPemilik || '').toLowerCase().trim())).size : 0
 
   if (desaLoading || umkmLoading) {
     return <div className="loading-screen"><div className="spinner"></div></div>
@@ -70,9 +72,9 @@ export default function ProfilDesa() {
                 <div style={{ fontSize: '14px', opacity: 0.9, fontWeight: '500' }}>Jiwa Penduduk</div>
               </div>
               <div style={{ textAlign: 'center', color: 'white' }}>
-                <div style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: '900', color: '#fcd34d', lineHeight: '1', marginBottom: '8px' }}>
-                  {umkmList.length || '24'}
-                </div>
+                  <div style={{ fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: '900', color: '#fcd34d', lineHeight: '1', marginBottom: '8px' }}>
+                    {uniquePelakuCount || '0'}
+                  </div>
                 <div style={{ fontSize: '14px', opacity: 0.9, fontWeight: '500' }}>Pelaku UMKM Aktif</div>
               </div>
               <div style={{ textAlign: 'center', color: 'white' }}>
