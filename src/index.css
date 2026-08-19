@@ -2443,6 +2443,9 @@ ul, ol {
   .masonry-item {
     margin-bottom: 12px;
   }
+  .masonry-img {
+    min-height: 180px;
+  }
   .masonry-overlay {
     padding: 12px 8px 8px;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 90%, transparent 100%);
