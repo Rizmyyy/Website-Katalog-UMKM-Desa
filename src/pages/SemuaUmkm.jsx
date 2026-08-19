@@ -147,8 +147,20 @@ export default function SemuaUmkm() {
             
             {visibleCount < filteredList.length && (
               <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                <button className="btn btn-outline" onClick={loadMore}>
-                  Muat Lebih Banyak ↓
+                <button 
+                  className="btn" 
+                  onClick={loadMore}
+                  style={{ 
+                    background: 'rgba(22, 163, 74, 0.1)', 
+                    color: 'var(--color-primary-dark)', 
+                    border: '1.5px solid rgba(22, 163, 74, 0.3)',
+                    fontWeight: '700',
+                    padding: '12px 24px',
+                    borderRadius: '12px',
+                    boxShadow: '0 4px 12px rgba(22, 163, 74, 0.05)'
+                  }}
+                >
+                  Muat Lebih Banyak 👇
                 </button>
               </div>
             )}
