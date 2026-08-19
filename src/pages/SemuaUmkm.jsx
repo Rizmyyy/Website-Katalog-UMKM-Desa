@@ -13,7 +13,7 @@ export default function SemuaUmkm() {
   
   const [activeCategory, setActiveCategory] = useState(location.state?.category || 'Semua')
   const [searchQuery, setSearchQuery] = useState(location.state?.search || '')
-  const [visibleCount, setVisibleCount] = useState(6)
+  const [visibleCount, setVisibleCount] = useState(12)
 
   // Memastikan sinkronisasi jika pengguna bernavigasi menggunakan tombol back/forward browser
   // atau mengklik kategori dari Header saat sudah berada di halaman ini.
@@ -52,11 +52,11 @@ export default function SemuaUmkm() {
 
   const handleCategoryChange = (category) => {
     setActiveCategory(category)
-    setVisibleCount(6) // Reset pagination on category change
+    setVisibleCount(12) // Reset pagination on category change
   }
 
   const loadMore = () => {
-    setVisibleCount(prev => prev + 6)
+    setVisibleCount(prev => prev + 12)
   }
 
   return (
@@ -104,7 +104,7 @@ export default function SemuaUmkm() {
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value)
-                  setVisibleCount(6)
+                  setVisibleCount(12)
                 }}
                 id="search-umkm"
               />
@@ -120,7 +120,7 @@ export default function SemuaUmkm() {
 
         {loading ? (
           <div className="grid grid-mobile-3" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))' }}>
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
               <div key={`skeleton-${i}`} className="skeleton" style={{ height: '360px', borderRadius: '16px' }} />
             ))}
           </div>
