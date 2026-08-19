@@ -160,7 +160,7 @@ export default function SemuaUmkm() {
                     boxShadow: '0 4px 12px rgba(22, 163, 74, 0.05)'
                   }}
                 >
-                  Muat Lebih Banyak 👇
+                  Muat Lebih Banyak ↓
                 </button>
               </div>
             )}
