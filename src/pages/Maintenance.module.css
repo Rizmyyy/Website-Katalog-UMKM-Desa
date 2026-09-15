@@ -119,6 +119,33 @@
   color: var(--color-text-muted);
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .maintenanceContainer {
+    padding: var(--space-3);
+  }
+  
+  .maintenanceCard {
+    padding: var(--space-4) var(--space-3);
+    border-radius: var(--rounded-lg);
+  }
+  
+  .logo {
+    height: 70px;
+  }
+  
+  .title {
+    font: var(--text-h1-mobile);
+    margin-bottom: var(--space-1);
+  }
+  
+  .description {
+    font-size: 14px;
+    margin-bottom: var(--space-4);
+  }
+}
+
+
 .contactText a {
   color: var(--color-primary);
   text-decoration: none;
