@@ -65,7 +65,20 @@ function HeadUpdater() {
   return null
 }
 
+import Maintenance from '@/pages/Maintenance'
+
 export default function App() {
+  const IS_MAINTENANCE = true
+
+  if (IS_MAINTENANCE) {
+    return (
+      <BrowserRouter>
+        <HeadUpdater />
+        <Maintenance />
+      </BrowserRouter>
+    )
+  }
+
   return (
     <BrowserRouter>
       <RouteTracker />
