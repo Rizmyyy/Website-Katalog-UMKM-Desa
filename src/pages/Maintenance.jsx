@@ -1,7 +1,15 @@
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import styles from './Maintenance.module.css'
 
 export default function Maintenance() {
+  const [time, setTime] = useState(new Date())
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <div className={styles.maintenanceContainer}>
       <motion.div
@@ -40,6 +48,17 @@ export default function Maintenance() {
         <p className={styles.contactText}>
           Terima kasih atas kesabaran Anda.
         </p>
+      </motion.div>
+      
+      <motion.div 
+        className={styles.clockWrapper}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
+        <span className={styles.clockText}>
+          {time.toLocaleTimeString('id-ID', { hour12: false })}
+        </span>
       </motion.div>
     </div>
   )
