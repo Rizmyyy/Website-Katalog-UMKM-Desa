@@ -68,7 +68,7 @@ function HeadUpdater() {
 import Maintenance from '@/pages/Maintenance'
 
 export default function App() {
-  const IS_MAINTENANCE = true
+  const IS_MAINTENANCE = false
 
   if (IS_MAINTENANCE) {
     return (
