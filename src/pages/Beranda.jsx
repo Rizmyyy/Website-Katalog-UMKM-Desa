@@ -196,7 +196,7 @@ export default function Beranda() {
               {!umkmLoading && heroProducts.length > 0 ? (
                 heroProducts.map((umkm, idx) => (
                   <Link key={umkm.id} to={`/umkm/${umkm.id}`} className="showcase-item">
-                    <ImageWithSkeleton src={umkm.fotoUtama} alt={umkm.namaUmkm} className="showcase-img" />
+                    <ImageWithSkeleton src={umkm.fotoUtama} alt={umkm.namaUmkm} className="showcase-img" priority={true} />
                     <div className="showcase-badge" style={{ textTransform: 'capitalize' }}>
                       {umkm.kategori || 'Produk'}
                     </div>

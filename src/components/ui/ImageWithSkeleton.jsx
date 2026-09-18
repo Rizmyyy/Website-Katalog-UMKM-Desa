@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function ImageWithSkeleton({ src, alt, className = '', style = {}, aspectRatio, onClick, ...props }) {
+export default function ImageWithSkeleton({ src, alt, className = '', style = {}, aspectRatio, onClick, priority = false, ...props }) {
   const [loaded, setLoaded] = useState(false)
   const [error, setError] = useState(false)
 
@@ -44,7 +44,8 @@ export default function ImageWithSkeleton({ src, alt, className = '', style = {}
         <img
           src={src}
           alt={alt}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchpriority={priority ? 'high' : 'auto'}
           className={`${className} ${loaded ? 'img-loaded' : 'img-loading'}`}
           style={{ width: '100%', height: '100%', borderRadius: 'inherit', objectFit: style.objectFit || 'cover' }}
           onLoad={() => setLoaded(true)}

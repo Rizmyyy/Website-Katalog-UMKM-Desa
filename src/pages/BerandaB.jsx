@@ -75,7 +75,8 @@ export default function Beranda() {
                     <ImageWithSkeleton
                       src={umkm.fotoUtama}
                       alt={umkm.namaUmkm}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      className="hero-product-img"
+                      priority={true}
                     />
                   </div>
                   <div className="hero-card-body">
