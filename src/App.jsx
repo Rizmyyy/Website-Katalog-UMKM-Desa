@@ -99,9 +99,9 @@ export default function App() {
               </Route>
 
               {/* Admin routes */}
-              <Route path="/admin" element={<AdminLogin />} />
+              <Route path="/panel-rahasia-gkidul" element={<AdminLogin />} />
               <Route
-                path="/admin"
+                path="/panel-rahasia-gkidul"
                 element={
                   <ProtectedRoute>
                     <AdminLayout />

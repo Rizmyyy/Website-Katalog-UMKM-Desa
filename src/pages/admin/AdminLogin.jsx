@@ -14,7 +14,7 @@ export default function AdminLogin() {
 
   // If already logged in, redirect
   if (user) {
-    navigate('/admin/dashboard', { replace: true })
+    navigate('/panel-rahasia-gkidul/dashboard', { replace: true })
     return null
   }
 
@@ -30,7 +30,7 @@ export default function AdminLogin() {
     setLoading(true)
     try {
       await login(email, password)
-      navigate('/admin/dashboard')
+      navigate('/panel-rahasia-gkidul/dashboard')
     } catch (err) {
       setError(err.message || 'Email atau kata sandi salah. Silakan coba lagi.')
     } finally {

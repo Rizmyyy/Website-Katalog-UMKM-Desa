@@ -19,7 +19,7 @@ export default function ProtectedRoute({ children }) {
   }
 
   if (!user) {
-    return <Navigate to="/admin" replace />
+    return <Navigate to="/panel-rahasia-gkidul" replace />
   }
 
   return children

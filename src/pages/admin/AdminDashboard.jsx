@@ -36,7 +36,7 @@ export default function AdminDashboard() {
             Total {umkmList.length} UMKM terdaftar
           </p>
         </div>
-        <Link to="/admin/umkm/tambah" className="btn btn-primary" id="btn-tambah-umkm">
+        <Link to="/panel-rahasia-gkidul/umkm/tambah" className="btn btn-primary" id="btn-tambah-umkm">
           + Tambah UMKM Baru
         </Link>
       </div>
@@ -58,7 +58,7 @@ export default function AdminDashboard() {
           <p style={{ color: 'var(--color-text-muted)', marginBottom: 'var(--space-3)' }}>
             Mulai tambahkan data UMKM pertama Anda.
           </p>
-          <Link to="/admin/umkm/tambah" className="btn btn-primary">
+          <Link to="/panel-rahasia-gkidul/umkm/tambah" className="btn btn-primary">
             + Tambah UMKM Baru
           </Link>
         </div>
@@ -130,7 +130,7 @@ export default function AdminDashboard() {
                     <div className="flex gap-1">
                       <button
                         className="btn btn-ghost btn-sm"
-                        onClick={() => navigate(`/admin/umkm/edit/${umkm.id}`)}
+                        onClick={() => navigate(`/panel-rahasia-gkidul/umkm/edit/${umkm.id}`)}
                         title="Ubah data"
                       >
                         ✏️ Ubah

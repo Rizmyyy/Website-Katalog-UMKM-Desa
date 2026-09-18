@@ -189,7 +189,7 @@ export default function AdminUmkmForm() {
         addToast('UMKM baru berhasil ditambahkan! ✓', 'success')
       }
 
-      navigate('/admin/dashboard')
+      navigate('/panel-rahasia-gkidul/dashboard')
     } catch (err) {
       addToast('Gagal menyimpan data. Silakan coba lagi.', 'error')
     } finally {
@@ -510,7 +510,7 @@ export default function AdminUmkmForm() {
           <button
             type="button"
             className="btn btn-ghost"
-            onClick={() => navigate('/admin/dashboard')}
+            onClick={() => navigate('/panel-rahasia-gkidul/dashboard')}
           >
             Batal
           </button>

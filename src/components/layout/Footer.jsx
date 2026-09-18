@@ -102,14 +102,7 @@ export default function Footer() {
           </p>
           <div className="footer-credits">
             <p className="footer-credits-text">Dibuat dengan ❤️ oleh Tim KKN 27 UIN SAIZU 2026</p>
-            <span className="footer-credits-bullet">•</span>
-            <Link to="/admin" className="footer-admin-link">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-              Admin
-            </Link>
+
           </div>
         </div>
       </div>

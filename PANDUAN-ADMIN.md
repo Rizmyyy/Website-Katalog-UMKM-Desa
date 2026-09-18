@@ -7,8 +7,7 @@ Dokumen ini berisi panduan singkat untuk pengelola (admin) website UMKM Desa Gum
 ## 1. Cara Masuk (Login) ke Panel Admin
 
 1. Buka browser di laptop atau HP Anda (disarankan menggunakan Google Chrome atau Safari).
-2. Kunjungi halaman utama website desa.
-3. Gulir (scroll) ke bagian paling bawah (Footer). Pada menu **Navigasi**, klik tautan **"🔐 Login Admin"** (Anda juga bisa langsung menambahkan `/admin` pada alamat website).
+2. Kunjungi tautan rahasia admin: `https://www.umkmgumelarkidul.web.id/panel-rahasia-gkidul` (Harap simpan link ini dan jangan dibagikan sembarangan).
 4. Anda akan melihat halaman masuk yang bertuliskan **Masuk Panel Admin**.
 5. Masukkan **Email** dan **Kata Sandi** (password) yang telah diberikan oleh tim IT / Tim KKN.
 6. Klik tombol **Masuk**. Jika berhasil, Anda akan dialihkan ke halaman utama panel admin (Dashboard).
