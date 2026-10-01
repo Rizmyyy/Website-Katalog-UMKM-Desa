@@ -95,31 +95,31 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #121212;
-  --color-surface: #1e1e1e;
-  --color-surface-dim: #252525;
-  --color-surface-alt: #2d2d2d;
-  --color-surface-container: #1a1a1a;
-  --color-navbar-bg: rgba(18, 18, 18, 0.85);
+  --color-bg: #0f1715;
+  --color-surface: #182220;
+  --color-surface-dim: #1e2a28;
+  --color-surface-alt: #243330;
+  --color-surface-container: #141e1c;
+  --color-navbar-bg: rgba(15, 23, 21, 0.85);
 
-  --color-primary: #1cbab4; /* Terang untuk dark mode */
-  --color-primary-dark: #128c88;
-  --color-primary-light: #45e3de;
-  --color-primary-10: rgba(28, 186, 180, 0.15);
+  --color-primary: #2dd4bf;
+  --color-primary-dark: #0b4d47; /* Darker for high contrast with white text */
+  --color-primary-light: #5eead4;
+  --color-primary-10: rgba(45, 212, 191, 0.15);
 
-  --color-accent: #d4824a;
-  --color-accent-dark: #c46a2e;
-  --color-accent-light: #e69d71;
-  --color-accent-10: rgba(212, 130, 74, 0.15);
+  --color-accent: #f59e0b; /* Amber */
+  --color-accent-dark: #d97706;
+  --color-accent-light: #fbbf24;
+  --color-accent-10: rgba(245, 158, 11, 0.15);
 
   --color-text: #F3F4F6;
   --color-text-secondary: #D1D5DB;
   --color-text-muted: #9CA3AF;
   --color-text-inverse: #1A1A1A;
 
-  --color-border: #374151;
-  --color-border-light: #2c313a;
-  --color-input-bg: #2d2d2d;
+  --color-border: #2a3a37;
+  --color-border-light: #1f2b29;
+  --color-input-bg: #1e2a28;
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
