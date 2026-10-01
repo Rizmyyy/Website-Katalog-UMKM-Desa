@@ -141,8 +141,8 @@ export default function Beranda() {
                 <Link to="/umkm" className="btn btn-primary" style={{ 
                   flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
                   padding: '12px 16px', fontSize: 'clamp(12px, 3.5vw, 16px)', 
-                  backgroundColor: '#b45309', 
-                  color: '#ffffff', 
+                  backgroundColor: '#d97706', 
+                  color: '#1a1a1a', 
                   border: 'none',
                   borderRadius: '12px',
                   fontWeight: 600,
@@ -628,8 +628,8 @@ export default function Beranda() {
                   padding: '16px 36px', 
                   fontSize: '16px',
                   fontWeight: 700,
-                  backgroundColor: '#b45309', 
-                  color: '#fff', 
+                  backgroundColor: '#d97706', 
+                  color: '#1a1a1a', 
                   border: 'none',
                   borderRadius: '16px',
                   transition: 'transform 0.3s ease, background-color 0.3s ease'
