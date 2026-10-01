@@ -66,7 +66,7 @@ export default function SemuaUmkm() {
         <div className="hero-dots" aria-hidden="true" />
         <div className="container" style={{ textAlign: 'center', paddingTop: 'clamp(30px, 5vw, 60px)', paddingBottom: 'clamp(40px, 8vw, 80px)', position: 'relative', zIndex: 1 }}>
           <ScrollReveal>
-            <div className="hero-eyebrow" style={{ display: 'inline-block', margin: '0 auto 16px', background: 'rgba(255,255,255,0.15)', color: '#fff', border: '1px solid rgba(255,255,255,0.3)' }}>
+            <div className="hero-eyebrow" style={{ display: 'inline-flex', margin: '0 auto 16px' }}>
               KATALOG PRODUK
             </div>
             <h1 className="hero-title" style={{ fontSize: 'clamp(28px, 6vw, 48px)', lineHeight: '1.2', marginBottom: '16px' }}>
