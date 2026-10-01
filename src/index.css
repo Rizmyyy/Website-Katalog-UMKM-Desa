@@ -4,7 +4,7 @@
    =================================================== */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap');
 
 /* ===== CSS Custom Properties (Design Tokens) ===== */
 :root {
@@ -42,7 +42,7 @@
   --color-success-bg: #b9eeab;
 
   /* — Typography — */
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --text-display: 800 56px/1.1 var(--font-heading);
@@ -439,7 +439,7 @@ ul, ol {
   display: block;
   aspect-ratio: 4 / 5;
   box-shadow: var(--shadow-card);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease;
 }
 .card-overlay:hover {
   transform: translateY(-8px) scale(1.02);

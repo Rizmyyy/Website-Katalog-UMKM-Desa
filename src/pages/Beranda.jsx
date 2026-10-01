@@ -114,10 +114,7 @@ export default function Beranda() {
       ====================================================== */}
       <section className="hero-section" id="beranda">
 
-        {/* Dekorasi latar: lingkaran cahaya blur & pola titik */}
-        <div className="hero-glow hero-glow-1" />
-        <div className="hero-glow hero-glow-2" />
-        <div className="hero-dots" aria-hidden="true" />
+
 
         <div className="hero-inner">
 
@@ -125,7 +122,6 @@ export default function Beranda() {
           <div className="hero-text">
             <ScrollReveal>
               <span className="hero-eyebrow">
-                <span className="hero-eyebrow-dot" />
                 Produk {desaInfo?.identitas?.namaWeb || 'UMKM Gumelar Kidul'} · Banyumas
               </span>
 
@@ -260,8 +256,7 @@ export default function Beranda() {
             <div className="category-grid">
               {/* Kategori 1: Kuliner (Tema Utama/Hijau + Dotted Pattern & Watermark) */}
               <Link to="/umkm" state={{ category: 'Kuliner' }} style={{ background: 'radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px), linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', backgroundSize: '16px 16px, 100% 100%', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
-                {/* Cahaya di Pojok Atas */}
-                <div style={{ position: 'absolute', top: '-20px', left: '-20px', width: '120px', height: '120px', background: 'rgba(255,255,255,0.1)', borderRadius: '50%', filter: 'blur(24px)' }}></div>
+                {/* Cahaya di Pojok Atas dihapus untuk mengurangi kesan AI */}
                 
                 {/* Watermark Ikon Raksasa di Pojok Kanan Bawah */}
                 <svg className="category-watermark" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
@@ -275,8 +270,7 @@ export default function Beranda() {
 
               {/* Kategori 2: Kerajinan (Tema Utama/Hijau + Dotted Pattern & Watermark) */}
               <Link to="/umkm" state={{ category: 'Kerajinan' }} style={{ background: 'radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px), linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', backgroundSize: '16px 16px, 100% 100%', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
-                {/* Cahaya di Pojok Atas */}
-                <div style={{ position: 'absolute', top: '-20px', left: '-20px', width: '120px', height: '120px', background: 'rgba(255,255,255,0.1)', borderRadius: '50%', filter: 'blur(24px)' }}></div>
+                {/* Cahaya di Pojok Atas dihapus untuk mengurangi kesan AI */}
                 
                 {/* Watermark Ikon Raksasa di Pojok Kanan Bawah */}
                 <svg className="category-watermark" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
@@ -520,7 +514,7 @@ export default function Beranda() {
               border-radius: 24px;
               overflow: hidden;
               position: relative;
-              transition: flex 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+              transition: flex 0.6s ease-out, box-shadow 0.4s ease;
               box-shadow: 0 10px 20px rgba(0,0,0,0.05);
               cursor: pointer;
             }
@@ -626,13 +620,11 @@ export default function Beranda() {
               overflow: 'hidden',
               boxShadow: '0 24px 48px rgba(5, 69, 67, 0.2)'
             }}>
-              {/* Ornamen Lingkaran Abstrak */}
-              <div style={{ position: 'absolute', top: '-30%', left: '-5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
-              <div style={{ position: 'absolute', bottom: '-30%', right: '-5%', width: '250px', height: '250px', background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)', pointerEvents: 'none' }}></div>
+              {/* Ornamen Lingkaran Abstrak dihapus */}
 
               <div style={{ position: 'relative', zIndex: 2, maxWidth: '720px', margin: '0 auto' }}>
                 <h2 style={{ fontSize: 'clamp(28px, 4.5vw, 46px)', fontWeight: '900', color: '#ffffff', marginBottom: '24px', letterSpacing: '-0.02em', lineHeight: '1.2' }}>
-                  Temukan Lebih <span style={{ background: 'linear-gradient(135deg, #fcd34d, #f59e0b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', color: 'transparent' }}>Banyak</span> Cerita & Karya
+                  Temukan Lebih <span style={{ color: '#fcd34d' }}>Banyak</span> Cerita & Karya
                 </h2>
                 
                 <p style={{ fontSize: 'clamp(15px, 2.5vw, 17px)', color: 'rgba(255,255,255,0.85)', lineHeight: '1.8', marginBottom: '40px' }}>
