@@ -241,7 +241,7 @@ export default function Beranda() {
               <h2 className="section-title" style={{ fontSize: 'clamp(24px, 5vw, 42px)', fontWeight: '900', letterSpacing: '-0.02em', marginBottom: '16px' }}>
                 Mulai dari yang <span style={{ color: 'var(--color-primary)' }}>Anda Cari</span>
               </h2>
-              <div style={{ width: '48px', height: '5px', background: 'linear-gradient(90deg, var(--color-primary), #4ade80)', borderRadius: '4px', margin: '0 auto 24px' }}></div>
+              <div style={{ width: '48px', height: '5px', backgroundColor: 'var(--color-primary)', borderRadius: '4px', margin: '0 auto 24px' }}></div>
               <p className="section-desc" style={{ maxWidth: '540px', margin: '0 auto', fontSize: 'clamp(14px, 3.5vw, 15px)' }}>
                 Lebih cepat dan mudah. Jelajahi kategori utama kami untuk langsung menemukan produk UMKM desa yang sedang Anda cari.
               </p>
@@ -249,7 +249,7 @@ export default function Beranda() {
 
             <div className="category-grid">
               {/* Kategori 1: Kuliner (Tema Utama/Hijau + Dotted Pattern & Watermark) */}
-              <Link to="/umkm" state={{ category: 'Kuliner' }} style={{ background: 'radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px), linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', backgroundSize: '16px 16px, 100% 100%', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
+              <Link to="/umkm" state={{ category: 'Kuliner' }} style={{ backgroundColor: 'var(--color-primary-dark)', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s ease-out', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
                 {/* Cahaya di Pojok Atas dihapus untuk mengurangi kesan AI */}
                 
                 {/* Watermark Ikon Raksasa di Pojok Kanan Bawah */}
@@ -263,7 +263,7 @@ export default function Beranda() {
               </Link>
 
               {/* Kategori 2: Kerajinan (Tema Utama/Hijau + Dotted Pattern & Watermark) */}
-              <Link to="/umkm" state={{ category: 'Kerajinan' }} style={{ background: 'radial-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px), linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', backgroundSize: '16px 16px, 100% 100%', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
+              <Link to="/umkm" state={{ category: 'Kerajinan' }} style={{ backgroundColor: 'var(--color-primary-dark)', padding: '32px 24px', borderRadius: '24px', textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)', boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), var(--shadow-md)', transition: 'all 0.4s ease-out', position: 'relative', overflow: 'hidden' }} className="category-card-hover">
                 {/* Cahaya di Pojok Atas dihapus untuk mengurangi kesan AI */}
                 
                 {/* Watermark Ikon Raksasa di Pojok Kanan Bawah */}
@@ -350,7 +350,7 @@ export default function Beranda() {
               <h2 className="section-title" style={{ fontSize: 'clamp(24px, 5vw, 42px)', fontWeight: '900', letterSpacing: '-0.02em', marginBottom: '16px' }}>
                 Produk Unggulan <span style={{ color: 'var(--color-primary)' }}>Desa</span>
               </h2>
-              <div style={{ width: '48px', height: '5px', background: 'linear-gradient(90deg, var(--color-primary), #4ade80)', borderRadius: '4px', margin: '0 auto 24px' }}></div>
+              <div style={{ width: '48px', height: '5px', backgroundColor: 'var(--color-primary)', borderRadius: '4px', margin: '0 auto 24px' }}></div>
               <p className="section-desc" style={{ maxWidth: '540px', margin: '0 auto', fontSize: 'clamp(14px, 3.5vw, 15px)' }}>
                 Jelajahi berbagai macam produk asli buatan tangan terampil warga {desaInfo?.nama || 'Desa Gumelar Kidul'}.
               </p>
@@ -421,8 +421,7 @@ export default function Beranda() {
       <section className="section" style={{ 
         position: 'relative', 
         padding: 'clamp(32px, 6vw, 100px) 0', 
-        backgroundColor: 'var(--color-primary-dark)', // Menggunakan warna utama website
-        backgroundImage: 'radial-gradient(circle at top right, var(--color-primary-10) 0%, transparent 60%)',
+        backgroundColor: 'var(--color-primary-dark)',
         overflow: 'hidden'
       }}>
         {/* Ornamen Garis Diagonal Latar Belakang Dihapus */}
@@ -438,7 +437,7 @@ export default function Beranda() {
               <p style={{ fontSize: 'clamp(14px, 2.5vw, 17px)', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6', marginBottom: 'clamp(20px, 4vw, 36px)' }}>
                 Setiap produk yang Anda temukan di katalog ini adalah hasil karya nyata warga {desaInfo?.nama || 'Desa Gumelar Kidul'}. Kami merangkum seluruh potensi desa agar Anda bisa melihat langsung kualitas dari para pelaku UMKM kami.
               </p>
-              <Link to="/profil" className="btn-hero-primary" style={{ padding: '14px 28px', background: 'linear-gradient(135deg, #f59e0b, #d97706)', boxShadow: '0 4px 20px rgba(217, 119, 6, 0.4)', color: '#fff', border: 'none' }}>
+              <Link to="/profil" className="btn-hero-primary" style={{ padding: '14px 28px', backgroundColor: '#d97706', color: '#fff', border: 'none' }}>
                 Baca Profil Lengkap Desa &rarr;
               </Link>
             </ScrollReveal>
