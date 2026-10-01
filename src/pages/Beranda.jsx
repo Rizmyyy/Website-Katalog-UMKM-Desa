@@ -628,7 +628,7 @@ export default function Beranda() {
                   padding: '16px 36px', 
                   fontSize: '16px',
                   fontWeight: 700,
-                  backgroundColor: '#d97706', 
+                  backgroundColor: '#b45309', 
                   color: '#fff', 
                   border: 'none',
                   borderRadius: '16px',
