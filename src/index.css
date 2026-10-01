@@ -1491,7 +1491,7 @@ ul, ol {
 
 .hero-section {
   position: relative;
-  background: linear-gradient(145deg, #021a19 0%, #054543 35%, #075754 65%, #096b68 100%);
+  background-color: var(--color-primary-dark);
   min-height: 55vh;
   display: flex;
   flex-direction: column;
@@ -1702,7 +1702,7 @@ ul, ol {
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.4s ease-out;
   cursor: pointer;
 }
 .showcase-item:nth-child(1) {
@@ -1724,7 +1724,7 @@ ul, ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.6s ease-out;
 }
 .showcase-item:hover .showcase-img {
   transform: scale(1.08);

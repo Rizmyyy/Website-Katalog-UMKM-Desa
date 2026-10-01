@@ -220,13 +220,7 @@ export default function Beranda() {
 
         </div>
 
-        {/* Scroll hint animasi */}
-        <div className="hero-scroll-hint" aria-hidden="true">
-          <div className="hero-scroll-mouse">
-            <div className="hero-scroll-wheel" />
-          </div>
-          <span>Scroll</span>
-        </div>
+
 
         {/* Wave divider bawah */}
         <div className="hero-wave" aria-hidden="true">
@@ -431,8 +425,7 @@ export default function Beranda() {
         backgroundImage: 'radial-gradient(circle at top right, var(--color-primary-10) 0%, transparent 60%)',
         overflow: 'hidden'
       }}>
-        {/* Ornamen Garis Diagonal Latar Belakang */}
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, opacity: 0.03, backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 2px, transparent 2px, transparent 12px)', pointerEvents: 'none' }}></div>
+        {/* Ornamen Garis Diagonal Latar Belakang Dihapus */}
         
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(24px, 6vw, 80px)', alignItems: 'center' }}>
