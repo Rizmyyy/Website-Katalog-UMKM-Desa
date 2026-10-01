@@ -1575,30 +1575,10 @@ ul, ol {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #86efac;
+  font-size: 14px;
+  font-weight: 500;
+  color: #a7f3d0;
   margin-bottom: 20px;
-  padding: 7px 16px;
-  background: rgba(74,222,128,0.12);
-  border-radius: 999px;
-  border: 1px solid rgba(74,222,128,0.25);
-}
-
-.hero-eyebrow-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #4ade80;
-  animation: blink 2s ease-in-out infinite;
-  flex-shrink: 0;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
 }
 
 /* Judul utama */
@@ -1611,19 +1591,9 @@ ul, ol {
   margin-bottom: 22px;
 }
 
-/* Kata aksen (bagian miring/emas) — bungkus kata dengan <em> di judulHero */
 .hero-title em,
 .hero-title-accent {
-  font-style: italic;
-  background: linear-gradient(135deg, #f59e0b, #fcd34d, #fbbf24);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  
-  /* Solusi pamungkas: Memecah kotak gradasi di tiap akhir baris dan menambah sedikit bantalan */
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  padding-right: 0.2em; /* Bantalan diperbesar (perfectionist fix) agar 'i' benar-benar utuh */
+  color: #fbbf24;
 }
 
 /* Deskripsi */
