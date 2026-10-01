@@ -194,6 +194,7 @@ export function UmkmProvider({ children }) {
           urls.push(url)
         } catch (error) {
           console.error("Gagal mengunggah gambar ke Cloudinary:", error)
+          throw new Error(`Cloudinary Error: ${error.message || 'Unknown error'}`)
         }
       }
       return urls
