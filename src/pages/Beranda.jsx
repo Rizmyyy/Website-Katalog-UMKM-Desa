@@ -141,11 +141,10 @@ export default function Beranda() {
                 <Link to="/umkm" className="btn btn-primary" style={{ 
                   flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
                   padding: '12px 16px', fontSize: 'clamp(12px, 3.5vw, 16px)', 
-                  background: 'linear-gradient(135deg, #f59e0b, #d97706)', 
+                  backgroundColor: '#b45309', 
                   color: '#ffffff', 
                   border: 'none',
                   borderRadius: '12px',
-                  boxShadow: '0 4px 20px rgba(217, 119, 6, 0.4)',
                   fontWeight: 600,
                   textAlign: 'center',
                   lineHeight: 1.2
