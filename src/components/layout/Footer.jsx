@@ -18,10 +18,10 @@ export default function Footer() {
         <div className="footer-grid">
           
           <div className="footer-col">
-            <h3 className={`footer-title ${openSection === 'info' ? 'active' : ''}`} onClick={() => toggleSection('info')}>
+            <h2 className={`footer-title ${openSection === 'info' ? 'active' : ''}`} onClick={() => toggleSection('info')}>
               <span>UMKM {desaInfo?.nama || 'Desa Gumelar Kidul'}</span>
               <span className="footer-toggle-icon">{openSection === 'info' ? '−' : '+'}</span>
-            </h3>
+            </h2>
             <div className={`footer-content ${openSection === 'info' ? 'open' : ''}`}>
               <p className="footer-text" style={{ maxWidth: '380px', lineHeight: '1.7' }}>
                 Etalase digital produk UMKM Desa Gumelar Kidul, Kecamatan Tambak, Kabupaten Banyumas.
@@ -30,10 +30,10 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h4 className={`footer-title ${openSection === 'jelajahi' ? 'active' : ''}`} onClick={() => toggleSection('jelajahi')}>
+            <h2 className={`footer-title ${openSection === 'jelajahi' ? 'active' : ''}`} onClick={() => toggleSection('jelajahi')}>
               <span>Jelajahi</span>
               <span className="footer-toggle-icon">{openSection === 'jelajahi' ? '−' : '+'}</span>
-            </h4>
+            </h2>
             <div className={`footer-content ${openSection === 'jelajahi' ? 'open' : ''}`}>
               <Link to="/" className="footer-link">Beranda</Link>
               <Link to="/umkm" className="footer-link">Katalog UMKM</Link>
@@ -43,10 +43,10 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h4 className={`footer-title ${openSection === 'bantuan' ? 'active' : ''}`} onClick={() => toggleSection('bantuan')}>
+            <h2 className={`footer-title ${openSection === 'bantuan' ? 'active' : ''}`} onClick={() => toggleSection('bantuan')}>
               <span>Bantuan</span>
               <span className="footer-toggle-icon">{openSection === 'bantuan' ? '−' : '+'}</span>
-            </h4>
+            </h2>
             <div className={`footer-content ${openSection === 'bantuan' ? 'open' : ''}`}>
               <Link to="/gabung" className="footer-link">Cara Memesan</Link>
               <a href={`https://wa.me/${(desaInfo.kontakDesa?.telepon || '').replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="footer-link">Hubungi Kami</a>
@@ -55,10 +55,10 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h4 className={`footer-title ${openSection === 'kontak' ? 'active' : ''}`} onClick={() => toggleSection('kontak')}>
+            <h2 className={`footer-title ${openSection === 'kontak' ? 'active' : ''}`} onClick={() => toggleSection('kontak')}>
               <span>Kontak Desa</span>
               <span className="footer-toggle-icon">{openSection === 'kontak' ? '−' : '+'}</span>
-            </h4>
+            </h2>
             <div className={`footer-content ${openSection === 'kontak' ? 'open' : ''}`}>
               
               <div className="footer-contact-item">
