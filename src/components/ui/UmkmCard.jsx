@@ -24,11 +24,11 @@ export default function UmkmCard({ umkm, index = 0 }) {
 
       {/* Badges Kategori / Unggulan di Pojok Atas */}
       <div className="card-badges-top">
-        <Badge variant="primary" style={{ padding: '4px 10px', fontSize: '10px', backgroundColor: 'rgba(20, 20, 20, 0.65)', color: '#fff', backdropFilter: 'blur(8px)', borderColor: 'rgba(255,255,255,0.15)' }}>
+        <Badge variant="primary" style={{ padding: '4px 10px', backgroundColor: 'rgba(20, 20, 20, 0.65)', color: '#fff', backdropFilter: 'blur(8px)', borderColor: 'rgba(255,255,255,0.15)' }}>
           {kategoriLabel[umkm.kategori] || umkm.kategori}
         </Badge>
         {umkm.isFeatured && (
-          <Badge variant="featured" style={{ padding: '4px 10px', fontSize: '10px', boxShadow: '0 4px 10px rgba(234, 88, 12, 0.4)' }}>
+          <Badge variant="featured" style={{ padding: '4px 10px' }}>
             ★ Unggulan
           </Badge>
         )}
