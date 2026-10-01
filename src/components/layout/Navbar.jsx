@@ -46,7 +46,7 @@ export default function Navbar() {
               <span style={{ fontWeight: 800, fontSize: 'clamp(0.85rem, 4vw, 1.15rem)', lineHeight: 1.1, color: 'var(--color-text)', letterSpacing: '0.02em', textTransform: 'uppercase', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 {desaInfo?.identitas?.namaWeb || 'UMKM Gumelar Kidul'}
               </span>
-              <span style={{ fontSize: 'clamp(0.55rem, 2.5vw, 0.7rem)', fontWeight: 700, color: 'var(--color-primary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: '4px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              <span style={{ fontSize: 'clamp(0.55rem, 2.5vw, 0.7rem)', fontWeight: 700, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: '4px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 KEC. TAMBAK &bull; KAB. BANYUMAS
               </span>
             </div>

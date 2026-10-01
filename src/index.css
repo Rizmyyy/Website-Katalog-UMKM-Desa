@@ -886,7 +886,7 @@ ul, ol {
 
 .navbar-link:hover,
 .navbar-link.active {
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
 }
 
 .navbar-link.active::after {
@@ -896,7 +896,7 @@ ul, ol {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
   border-radius: 1px;
 }
 
