@@ -971,7 +971,7 @@ ul, ol {
 
 /* — Footer — */
 .footer {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-dark);
   color: rgba(255, 255, 255, 0.85);
   padding: var(--space-6) 0 var(--space-3);
 }

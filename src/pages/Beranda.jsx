@@ -603,7 +603,7 @@ export default function Beranda() {
         <div className="container">
           <ScrollReveal>
             <div style={{
-              backgroundColor: 'var(--color-primary)',
+              backgroundColor: 'var(--color-primary-dark)',
               borderRadius: '32px',
               padding: 'clamp(40px, 8vw, 80px) clamp(20px, 4vw, 40px)',
               textAlign: 'center',
