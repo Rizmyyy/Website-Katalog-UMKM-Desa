@@ -137,6 +137,7 @@ export default function SemuaUmkm() {
           </div>
         ) : (
           <>
+            <h2 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>Daftar Produk UMKM</h2>
             <div className="grid mobile-grid-2" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))' }}>
               {filteredList.slice(0, visibleCount).map((umkm, idx) => (
                 <ScrollReveal key={umkm.id} delay={idx * 0.05}>
