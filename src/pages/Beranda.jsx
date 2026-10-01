@@ -603,13 +603,12 @@ export default function Beranda() {
         <div className="container">
           <ScrollReveal>
             <div style={{
-              background: 'linear-gradient(135deg, var(--color-primary-dark), var(--color-primary))',
+              backgroundColor: 'var(--color-primary)',
               borderRadius: '32px',
               padding: 'clamp(40px, 8vw, 80px) clamp(20px, 4vw, 40px)',
               textAlign: 'center',
               position: 'relative',
               overflow: 'hidden',
-              boxShadow: '0 24px 48px rgba(5, 69, 67, 0.2)'
             }}>
               {/* Ornamen Lingkaran Abstrak dihapus */}
 
@@ -629,12 +628,11 @@ export default function Beranda() {
                   padding: '16px 36px', 
                   fontSize: '16px',
                   fontWeight: 700,
-                  background: 'linear-gradient(135deg, #f59e0b, #d97706)', 
-                  boxShadow: '0 8px 24px rgba(217, 119, 6, 0.4)', 
+                  backgroundColor: '#d97706', 
                   color: '#fff', 
                   border: 'none',
                   borderRadius: '16px',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                  transition: 'transform 0.3s ease, background-color 0.3s ease'
                 }}>
                   Mulai Jelajahi Produk <span>&rarr;</span>
                 </Link>
