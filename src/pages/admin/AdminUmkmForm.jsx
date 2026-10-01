@@ -144,7 +144,11 @@ export default function AdminUmkmForm() {
           return url
         }
         return img.url
-      })
+      }).filter(Boolean)
+
+      if (newFiles.length > 0 && uploadedUrls.length !== newFiles.length) {
+        throw new Error('Gagal mengunggah beberapa foto utama ke Cloudinary');
+      }
 
       // Process "proses pembuatan" images
       const newProsesFiles = prosesImages.filter((img) => img.isNew && img.file).map((img) => img.file)
@@ -160,7 +164,11 @@ export default function AdminUmkmForm() {
           return url
         }
         return img.url
-      })
+      }).filter(Boolean)
+
+      if (newProsesFiles.length > 0 && uploadedProsesUrls.length !== newProsesFiles.length) {
+        throw new Error('Gagal mengunggah beberapa foto proses pembuatan ke Cloudinary');
+      }
 
       // Process price data
       const processedPrices = form.daftarHarga
@@ -191,7 +199,8 @@ export default function AdminUmkmForm() {
 
       navigate('/panel-rahasia-gkidul/dashboard')
     } catch (err) {
-      addToast('Gagal menyimpan data. Silakan coba lagi.', 'error')
+      console.error(err)
+      addToast(err.message || 'Gagal menyimpan data. Silakan coba lagi.', 'error')
     } finally {
       setSaving(false)
     }
