@@ -266,8 +266,8 @@ export default function GabungUmkm() {
           .dark-form-pattern {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            opacity: 0.1;
-            background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 12px);
+            opacity: 0.2;
+            background-image: radial-gradient(circle at top right, #fff 0%, transparent 70%);
             pointer-events: none;
             z-index: 0;
           }
@@ -359,7 +359,7 @@ export default function GabungUmkm() {
 
               {/* FAQ Section */}
               <div>
-                <div className="hero-eyebrow" style={{ display: 'inline-flex', marginBottom: '16px' }}>
+                <div style={{ display: 'inline-flex', padding: '6px 16px', background: 'var(--color-primary-10)', color: 'var(--color-primary-dark)', borderRadius: '100px', fontSize: '13px', fontWeight: '700', marginBottom: '16px' }}>
                   Pertanyaan Umum
                 </div>
                 <h2 className="faq-title" style={{ fontSize: '24px', fontWeight: 800, marginBottom: '16px', color: 'var(--color-text)' }}>
