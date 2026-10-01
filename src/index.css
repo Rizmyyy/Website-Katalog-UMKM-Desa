@@ -457,7 +457,6 @@ ul, ol {
 .card-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -482,6 +481,7 @@ ul, ol {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .card-overlay-title {
   font-size: 20px;
@@ -571,7 +571,7 @@ ul, ol {
 
 /* Featured Badge: Gradien oranye premium dengan teks putih */
 .badge-featured {
-  background-color: #ea580c;
+  background-color: #b45309;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.35);
 }

@@ -24,7 +24,7 @@ export default function UmkmCard({ umkm, index = 0 }) {
 
       {/* Badges Kategori / Unggulan di Pojok Atas */}
       <div className="card-badges-top">
-        <Badge variant="primary" style={{ padding: '4px 10px', backgroundColor: 'rgba(20, 20, 20, 0.65)', color: '#fff', backdropFilter: 'blur(8px)', borderColor: 'rgba(255,255,255,0.15)' }}>
+        <Badge variant="primary" style={{ padding: '4px 10px', backgroundColor: '#1f2937', color: '#fff', borderColor: '#374151' }}>
           {kategoriLabel[umkm.kategori] || umkm.kategori}
         </Badge>
         {umkm.isFeatured && (
