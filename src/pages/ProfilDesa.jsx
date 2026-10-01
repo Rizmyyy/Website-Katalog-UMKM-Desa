@@ -226,7 +226,7 @@ export default function ProfilDesa() {
                   )}
                 </div>
                 <div>
-                  <h4 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-dark)', marginBottom: '4px' }}>Bpk. Imam Tobroni</h4>
+                  <h2 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-dark)', marginBottom: '4px' }}>Bpk. Imam Tobroni</h2>
                   <p style={{ fontSize: '13px', color: 'var(--color-primary-dark)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Kepala Desa
                   </p>
@@ -236,7 +236,7 @@ export default function ProfilDesa() {
             {/* Sejarah Card */}
             <ScrollReveal className="bento-item bento-sejarah" delay={1}>
               <div style={{ marginBottom: '24px' }}>
-                <h2 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--color-text-dark)', margin: 0, paddingLeft: '16px', borderLeft: '5px solid var(--color-primary)' }}>Sejarah Desa</h2>
+                <h2 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--color-text-dark)', margin: 0 }}>Sejarah Desa</h2>
               </div>
               <div style={{ 
                 fontSize: '16px', 
@@ -286,7 +286,7 @@ export default function ProfilDesa() {
             {/* Visi Misi Card */}
             <ScrollReveal className="bento-item bento-visi" delay={2}>
               <div style={{ marginBottom: '24px' }}>
-                <h2 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--color-text-dark)', margin: 0, paddingLeft: '16px', borderLeft: '5px solid #d97706' }}>Visi & Misi</h2>
+                <h2 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--color-text-dark)', margin: 0 }}>Visi & Misi</h2>
               </div>
               
               <div style={{ 
@@ -352,7 +352,7 @@ export default function ProfilDesa() {
             {/* Kontak Card */}
             <ScrollReveal className="bento-item bento-kontak" delay={3}>
               <div style={{ marginBottom: '24px' }}>
-                <h2 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--color-text-dark)', margin: 0, paddingLeft: '16px', borderLeft: '5px solid #059669' }}>Pusat Layanan</h2>
+                <h2 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--color-text-dark)', margin: 0 }}>Pusat Layanan</h2>
               </div>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
                 Kunjungi pusat tata usaha dan pelayanan administrasi kami pada jam kerja untuk informasi lebih lanjut.
