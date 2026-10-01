@@ -436,7 +436,7 @@ export default function Beranda() {
               <p style={{ fontSize: 'clamp(14px, 2.5vw, 17px)', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6', marginBottom: 'clamp(20px, 4vw, 36px)' }}>
                 Setiap produk yang Anda temukan di katalog ini adalah hasil karya nyata warga {desaInfo?.nama || 'Desa Gumelar Kidul'}. Kami merangkum seluruh potensi desa agar Anda bisa melihat langsung kualitas dari para pelaku UMKM kami.
               </p>
-              <Link to="/profil" className="btn-hero-primary" style={{ padding: '14px 28px', backgroundColor: '#d97706', color: '#fff', border: 'none' }}>
+              <Link to="/profil" className="btn-hero-primary">
                 Baca Profil Lengkap Desa &rarr;
               </Link>
             </ScrollReveal>
@@ -567,7 +567,7 @@ export default function Beranda() {
               <h2 className="section-title" style={{ fontSize: 'clamp(24px, 5vw, 42px)', fontWeight: '900', letterSpacing: '-0.02em', marginBottom: '16px' }}>
                 Galeri Kegiatan <span style={{ color: 'var(--color-primary)' }}>UMKM</span>
               </h2>
-              <div style={{ width: '48px', height: '5px', background: 'linear-gradient(90deg, var(--color-primary), #4ade80)', borderRadius: '4px', margin: '0 auto 24px' }}></div>
+              <div style={{ width: '48px', height: '5px', backgroundColor: 'var(--color-primary)', borderRadius: '4px', margin: '0 auto 24px' }}></div>
               <p className="section-desc" style={{ maxWidth: '540px', margin: '0 auto', fontSize: 'clamp(14px, 3.5vw, 15px)' }}>
                 Menampilkan rekam jejak kegiatan Mahasiswa KKN saat melakukan pendampingan, berbincang santai, melihat langsung proses pembuatan, hingga merancang inovasi bersama para pelaku UMKM {desaInfo?.nama || 'Desa Gumelar Kidul'}.
               </p>
