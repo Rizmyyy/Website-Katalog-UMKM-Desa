@@ -305,8 +305,8 @@ export default function GabungUmkm() {
             color: rgba(255, 255, 255, 0.9);
           }
           .dark-btn-submit {
-            background: #d97706; /* Amber/Orange */
-            color: #fff;
+            background: #d97706; /* Vibrant Orange */
+            color: #1a1a1a; /* Dark text for contrast */
             border: none;
             padding: 16px;
             border-radius: 12px;
@@ -349,9 +349,9 @@ export default function GabungUmkm() {
                       {card.icon}
                     </div>
                     <div>
-                      <h3 className="contact-card-title" style={{ fontSize: '15px', fontWeight: 700, margin: '0 0 4px', color: 'var(--color-text)' }}>{card.title}</h3>
+                      <h2 className="contact-card-title" style={{ fontSize: '15px', fontWeight: 700, margin: '0 0 4px', color: 'var(--color-text)' }}>{card.title}</h2>
                       <p className="contact-card-content" style={{ margin: 0, fontSize: '14px', color: 'var(--color-text-secondary)' }}>{card.content}</p>
-                      {card.sub && <p className="contact-card-sub" style={{ margin: '4px 0 0', fontSize: '12px', color: 'var(--color-text-muted)' }}>{card.sub}</p>}
+                      {card.sub && <p className="contact-card-sub" style={{ margin: '4px 0 0', fontSize: '13px', color: 'var(--color-text-secondary)' }}>{card.sub}</p>}
                     </div>
                   </div>
                 ))}
@@ -359,9 +359,9 @@ export default function GabungUmkm() {
 
               {/* FAQ Section */}
               <div>
-                <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#d97706', textTransform: 'uppercase', marginBottom: '8px' }}>
+                <div className="hero-eyebrow" style={{ display: 'inline-flex', marginBottom: '16px' }}>
                   Pertanyaan Umum
-                </p>
+                </div>
                 <h2 className="faq-title" style={{ fontSize: '24px', fontWeight: 800, marginBottom: '16px', color: 'var(--color-text)' }}>
                   Yang sering ditanyakan
                 </h2>
