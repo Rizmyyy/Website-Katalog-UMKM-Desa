@@ -359,9 +359,7 @@ export default function GabungUmkm() {
 
               {/* FAQ Section */}
               <div>
-                <div style={{ display: 'inline-flex', padding: '6px 16px', background: 'var(--color-primary-10)', color: 'var(--color-primary-dark)', borderRadius: '100px', fontSize: '13px', fontWeight: '700', marginBottom: '16px' }}>
-                  Pertanyaan Umum
-                </div>
+
                 <h2 className="faq-title" style={{ fontSize: '24px', fontWeight: 800, marginBottom: '16px', color: 'var(--color-text)' }}>
                   Yang sering ditanyakan
                 </h2>
